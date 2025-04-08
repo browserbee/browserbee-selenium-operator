@@ -1,0 +1,9 @@
+apiVersion: selenium-hub.browserbee.io/v1
+kind: SeleniumHub
+metadata:
+  labels:
+    app.kubernetes.io/name: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumhub-sample
+spec:
+  # TODO(user): Add fields here

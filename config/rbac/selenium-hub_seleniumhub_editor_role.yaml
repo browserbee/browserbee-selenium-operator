@@ -1,0 +1,31 @@
+# permissions for end users to edit seleniumhubs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: seleniumhub-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: browserbee-selenium-operator
+    app.kubernetes.io/part-of: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumhub-editor-role
+rules:
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs/status
+  verbs:
+  - get

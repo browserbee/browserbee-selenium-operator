@@ -1,0 +1,27 @@
+# permissions for end users to view seleniumstandalones.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: seleniumstandalone-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: browserbee-selenium-operator
+    app.kubernetes.io/part-of: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumstandalone-viewer-role
+rules:
+- apiGroups:
+  - selenium-standalone.browserbee.io
+  resources:
+  - seleniumstandalones
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - selenium-standalone.browserbee.io
+  resources:
+  - seleniumstandalones/status
+  verbs:
+  - get

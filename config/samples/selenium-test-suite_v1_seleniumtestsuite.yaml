@@ -1,0 +1,9 @@
+apiVersion: selenium-test-suite.browserbee.io/v1
+kind: SeleniumTestSuite
+metadata:
+  labels:
+    app.kubernetes.io/name: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumtestsuite-sample
+spec:
+  # TODO(user): Add fields here

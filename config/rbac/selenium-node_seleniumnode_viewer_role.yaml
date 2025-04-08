@@ -1,0 +1,27 @@
+# permissions for end users to view seleniumnodes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: seleniumnode-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: browserbee-selenium-operator
+    app.kubernetes.io/part-of: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumnode-viewer-role
+rules:
+- apiGroups:
+  - selenium-node.browserbee.io
+  resources:
+  - seleniumnodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - selenium-node.browserbee.io
+  resources:
+  - seleniumnodes/status
+  verbs:
+  - get

@@ -1,0 +1,27 @@
+# permissions for end users to view seleniumhubs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: seleniumhub-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: browserbee-selenium-operator
+    app.kubernetes.io/part-of: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumhub-viewer-role
+rules:
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs/status
+  verbs:
+  - get

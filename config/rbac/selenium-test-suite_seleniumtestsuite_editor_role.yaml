@@ -1,0 +1,31 @@
+# permissions for end users to edit seleniumtestsuites.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: seleniumtestsuite-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: browserbee-selenium-operator
+    app.kubernetes.io/part-of: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumtestsuite-editor-role
+rules:
+- apiGroups:
+  - selenium-test-suite.browserbee.io
+  resources:
+  - seleniumtestsuites
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-test-suite.browserbee.io
+  resources:
+  - seleniumtestsuites/status
+  verbs:
+  - get

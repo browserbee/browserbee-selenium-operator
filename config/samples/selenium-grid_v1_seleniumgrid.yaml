@@ -1,0 +1,9 @@
+apiVersion: selenium-grid.browserbee.io/v1
+kind: SeleniumGrid
+metadata:
+  labels:
+    app.kubernetes.io/name: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumgrid-sample
+spec:
+  # TODO(user): Add fields here

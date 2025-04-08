@@ -1,0 +1,38 @@
+# This kustomization.yaml is not intended to be run by itself,
+# since it depends on service name and namespace that are out of this kustomize package.
+# It should be run by config/default
+resources:
+- bases/selenium-test-suite.browserbee.io_seleniumtestsuites.yaml
+- bases/selenium-test-case.browserbee.io_seleniumtestcases.yaml
+- bases/selenium-grid.browserbee.io_seleniumgrids.yaml
+- bases/selenium-hub.browserbee.io_seleniumhubs.yaml
+- bases/selenium-node.browserbee.io_seleniumnodes.yaml
+- bases/selenium-standalone.browserbee.io_seleniumstandalones.yaml
+#+kubebuilder:scaffold:crdkustomizeresource
+
+patches:
+# [WEBHOOK] To enable webhook, uncomment all the sections with [WEBHOOK] prefix.
+# patches here are for enabling the conversion webhook for each CRD
+#- path: patches/webhook_in_selenium-test-suite_seleniumtestsuites.yaml
+#- path: patches/webhook_in_selenium-test-case_seleniumtestcases.yaml
+#- path: patches/webhook_in_selenium-grid_seleniumgrids.yaml
+#- path: patches/webhook_in_selenium-hub_seleniumhubs.yaml
+#- path: patches/webhook_in_selenium-node_seleniumnodes.yaml
+#- path: patches/webhook_in_selenium-standalone_seleniumstandalones.yaml
+#+kubebuilder:scaffold:crdkustomizewebhookpatch
+
+# [CERTMANAGER] To enable cert-manager, uncomment all the sections with [CERTMANAGER] prefix.
+# patches here are for enabling the CA injection for each CRD
+#- path: patches/cainjection_in_selenium-test-suite_seleniumtestsuites.yaml
+#- path: patches/cainjection_in_selenium-test-case_seleniumtestcases.yaml
+#- path: patches/cainjection_in_selenium-grid_seleniumgrids.yaml
+#- path: patches/cainjection_in_selenium-hub_seleniumhubs.yaml
+#- path: patches/cainjection_in_selenium-node_seleniumnodes.yaml
+#- path: patches/cainjection_in_selenium-standalone_seleniumstandalones.yaml
+#+kubebuilder:scaffold:crdkustomizecainjectionpatch
+
+# [WEBHOOK] To enable webhook, uncomment the following section
+# the following config is for teaching kustomize how to do kustomization for CRDs.
+
+#configurations:
+#- kustomizeconfig.yaml
