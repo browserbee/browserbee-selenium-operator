@@ -23,13 +23,49 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+type HubRef struct {
+	// Name of the hub
+	Name string `json:"name,omitempty"`
+	// Namespace of the hub
+	Namespace string `json:"namespace,omitempty"`
+}
+
 // SeleniumTestCaseSpec defines the desired state of SeleniumTestCase
 type SeleniumTestCaseSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	HubRef      HubRef        `json:"hubRef,omitempty"`
+	Schedule    string        `json:"schedule,omitempty"`
+	Description string        `json:"description,omitempty"`
+	WebDriver   WebDriverSpec `json:"webDriver,omitempty"`
+	Steps       []Step        `json:"steps,omitempty"`
+}
 
-	// Foo is an example field of SeleniumTestCase. Edit seleniumtestcase_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+type WebDriverSpec struct {
+	Browser      string            `json:"browser,omitempty"`
+	Headless     bool              `json:"headless,omitempty"`
+	ImplicitWait int               `json:"implicitWait,omitempty"`
+	WindowSize   WindowSize        `json:"windowSize,omitempty"`
+	RemoteURL    string            `json:"remoteURL,omitempty"`
+	Capabilities map[string]string `json:"capabilities,omitempty"`
+}
+
+type WindowSize struct {
+	Width  int `json:"width,omitempty"`
+	Height int `json:"height,omitempty"`
+}
+
+type Step struct {
+	Name      string    `json:"name,omitempty"`
+	Action    string    `json:"action,omitempty"`
+	Target    string    `json:"target,omitempty"`
+	Selector  *Selector `json:"selector,omitempty"`
+	Value     string    `json:"value,omitempty"`
+	Expected  string    `json:"expected,omitempty"`
+	Condition string    `json:"condition,omitempty"`
+}
+
+type Selector struct {
+	Strategy string `json:"strategy,omitempty"`
+	Value    string `json:"value,omitempty"`
 }
 
 // SeleniumTestCaseStatus defines the observed state of SeleniumTestCase

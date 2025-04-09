@@ -1,15 +1,199 @@
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  labels:
-    app.kubernetes.io/name: clusterrole
-    app.kubernetes.io/instance: manager-role
-    app.kubernetes.io/component: rbac
-    app.kubernetes.io/created-by: browserbee-selenium-operator
-    app.kubernetes.io/part-of: browserbee-selenium-operator
-    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - cronjobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-grid.browserbee.io
+  resources:
+  - seleniumgrids
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-grid.browserbee.io
+  resources:
+  - seleniumgrids/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium-grid.browserbee.io
+  resources:
+  - seleniumgrids/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium-hub.browserbee.io
+  resources:
+  - seleniumhubs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - selenium-node.browserbee.io
+  resources:
+  - seleniumnodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-node.browserbee.io
+  resources:
+  - seleniumnodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium-node.browserbee.io
+  resources:
+  - seleniumnodes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - selenium-standalone.browserbee.io
+  resources:
+  - seleniumstandalones
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-standalone.browserbee.io
+  resources:
+  - seleniumstandalones/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium-standalone.browserbee.io
+  resources:
+  - seleniumstandalones/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - selenium-test-case.browserbee.io
+  resources:
+  - seleniumtestcases
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-test-case.browserbee.io
+  resources:
+  - seleniumtestcases/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium-test-case.browserbee.io
+  resources:
+  - seleniumtestcases/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - selenium-test-suite.browserbee.io
+  resources:
+  - seleniumtestsuites
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium-test-suite.browserbee.io
+  resources:
+  - seleniumtestsuites/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium-test-suite.browserbee.io
+  resources:
+  - seleniumtestsuites/status
+  verbs:
+  - get
+  - patch
+  - update

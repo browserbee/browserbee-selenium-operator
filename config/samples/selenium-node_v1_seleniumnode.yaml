@@ -6,4 +6,9 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: seleniumnode-sample
 spec:
-  # TODO(user): Add fields here
+  hubRef:
+    name: seleniumhub-sample
+    namespace: default
+  image: selenium/node-chromium:latest
+  replicas: 2
+

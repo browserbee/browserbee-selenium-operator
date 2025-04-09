@@ -17,6 +17,7 @@ limitations under the License.
 package v1
 
 import (
+	seleniumhubv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -28,8 +29,24 @@ type SeleniumNodeSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of SeleniumNode. Edit seleniumnode_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// GridRef is a reference to the Selenium Grid configuration.
+	HubRef seleniumhubv1.SeleniumHubRef `json:"hubRef,omitempty"`
+
+	// Image is the container image for this browser node.
+	// e.g., "selenium/node-chrome:4.8.3-20230321"
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Pattern=`^.+:.*$`
+	Image string `json:"image"`
+
+	// Replicas is the number of node replicas to run for this browser type.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=1
+	Replicas int32 `json:"replicas,omitempty"`
+
+	// Resources (optional) might define CPU/memory requests & limits (not shown here),
+	// environment variables, or other container configs for the node.
+	// This is omitted for simplicity, but can be added as needed.
+	// Resources corev1.ResourceRequirements `json:"resources,omitempty"`
 }
 
 // SeleniumNodeStatus defines the observed state of SeleniumNode

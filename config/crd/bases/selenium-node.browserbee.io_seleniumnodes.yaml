@@ -1,0 +1,81 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: seleniumnodes.selenium-node.browserbee.io
+spec:
+  group: selenium-node.browserbee.io
+  names:
+    kind: SeleniumNode
+    listKind: SeleniumNodeList
+    plural: seleniumnodes
+    singular: seleniumnode
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: SeleniumNode is the Schema for the seleniumnodes API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: SeleniumNodeSpec defines the desired state of SeleniumNode
+            properties:
+              hubRef:
+                description: GridRef is a reference to the Selenium Grid configuration.
+                properties:
+                  name:
+                    description: Name is the name of the Selenium Hub.
+                    pattern: ^[a-zA-Z0-9-]+$
+                    type: string
+                  namespace:
+                    description: Namespace is the namespace where the Selenium Hub
+                      is deployed.
+                    pattern: ^[a-zA-Z0-9-]+$
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+              image:
+                description: |-
+                  Image is the container image for this browser node.
+                  e.g., "selenium/node-chrome:4.8.3-20230321"
+                pattern: ^.+:.*$
+                type: string
+              replicas:
+                default: 1
+                description: Replicas is the number of node replicas to run for this
+                  browser type.
+                format: int32
+                minimum: 1
+                type: integer
+            required:
+            - image
+            type: object
+          status:
+            description: SeleniumNodeStatus defines the observed state of SeleniumNode
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

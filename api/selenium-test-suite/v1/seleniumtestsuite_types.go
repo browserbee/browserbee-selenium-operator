@@ -17,6 +17,7 @@ limitations under the License.
 package v1
 
 import (
+	v1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-test-case/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -28,8 +29,7 @@ type SeleniumTestSuiteSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of SeleniumTestSuite. Edit seleniumtestsuite_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	TestCases []v1.SeleniumTestCase `json:"testCases,omitempty"`
 }
 
 // SeleniumTestSuiteStatus defines the observed state of SeleniumTestSuite

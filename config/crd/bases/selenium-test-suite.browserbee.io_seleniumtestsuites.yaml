@@ -1,0 +1,133 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: seleniumtestsuites.selenium-test-suite.browserbee.io
+spec:
+  group: selenium-test-suite.browserbee.io
+  names:
+    kind: SeleniumTestSuite
+    listKind: SeleniumTestSuiteList
+    plural: seleniumtestsuites
+    singular: seleniumtestsuite
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: SeleniumTestSuite is the Schema for the seleniumtestsuites API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: SeleniumTestSuiteSpec defines the desired state of SeleniumTestSuite
+            properties:
+              testCases:
+                items:
+                  description: SeleniumTestCase is the Schema for the seleniumtestcases
+                    API
+                  properties:
+                    apiVersion:
+                      description: |-
+                        APIVersion defines the versioned schema of this representation of an object.
+                        Servers should convert recognized schemas to the latest internal value, and
+                        may reject unrecognized values.
+                        More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+                      type: string
+                    kind:
+                      description: |-
+                        Kind is a string value representing the REST resource this object represents.
+                        Servers may infer this from the endpoint the client submits requests to.
+                        Cannot be updated.
+                        In CamelCase.
+                        More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+                      type: string
+                    metadata:
+                      type: object
+                    spec:
+                      description: SeleniumTestCaseSpec defines the desired state
+                        of SeleniumTestCase
+                      properties:
+                        description:
+                          type: string
+                        schedule:
+                          type: string
+                        steps:
+                          items:
+                            properties:
+                              action:
+                                type: string
+                              condition:
+                                type: string
+                              expected:
+                                type: string
+                              name:
+                                type: string
+                              selector:
+                                properties:
+                                  strategy:
+                                    type: string
+                                  value:
+                                    type: string
+                                type: object
+                              target:
+                                type: string
+                              value:
+                                type: string
+                            type: object
+                          type: array
+                        webDriver:
+                          properties:
+                            browser:
+                              type: string
+                            capabilities:
+                              additionalProperties:
+                                type: string
+                              type: object
+                            headless:
+                              type: boolean
+                            implicitWait:
+                              type: integer
+                            remoteURL:
+                              type: string
+                            windowSize:
+                              properties:
+                                height:
+                                  type: integer
+                                width:
+                                  type: integer
+                              type: object
+                          type: object
+                      type: object
+                    status:
+                      description: SeleniumTestCaseStatus defines the observed state
+                        of SeleniumTestCase
+                      type: object
+                  type: object
+                type: array
+            type: object
+          status:
+            description: SeleniumTestSuiteStatus defines the observed state of SeleniumTestSuite
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

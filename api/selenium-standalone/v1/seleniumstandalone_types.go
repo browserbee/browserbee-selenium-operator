@@ -25,11 +25,26 @@ import (
 
 // SeleniumStandaloneSpec defines the desired state of SeleniumStandalone
 type SeleniumStandaloneSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	Image            string            `json:"image,omitempty"`   // e.g. selenium/standalone-chrome
+	Version          string            `json:"version,omitempty"` // e.g. 120.0
+	Replicas         int32             `json:"replicas,omitempty"`
+	BrowserName      string            `json:"browserName,omitempty"`      // e.g. chrome, firefox
+	ScreenResolution string            `json:"screenResolution,omitempty"` // e.g. 1920x1080
+	Headless         bool              `json:"headless,omitempty"`
+	Port             int               `json:"port,omitempty"`        // default 4444
+	StartupArgs      []string          `json:"startupArgs,omitempty"` // Additional args to pass to the container
+	Env              map[string]string `json:"env,omitempty"`         // Env vars for container
+	Resources        ResourceSpec      `json:"resources,omitempty"`   // CPU/Memory limits
+}
 
-	// Foo is an example field of SeleniumStandalone. Edit seleniumstandalone_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+type ResourceSpec struct {
+	Requests ResourceRequirements `json:"requests,omitempty"`
+	Limits   ResourceRequirements `json:"limits,omitempty"`
+}
+
+type ResourceRequirements struct {
+	CPU    string `json:"cpu,omitempty"`    // e.g. "500m"
+	Memory string `json:"memory,omitempty"` // e.g. "512Mi"
 }
 
 // SeleniumStandaloneStatus defines the observed state of SeleniumStandalone

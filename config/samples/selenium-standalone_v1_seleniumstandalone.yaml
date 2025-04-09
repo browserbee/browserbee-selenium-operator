@@ -6,4 +6,23 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: seleniumstandalone-sample
 spec:
-  # TODO(user): Add fields here
+  image: selenium/standalone-chromium
+  version: "120.0"
+  replicas: 1
+  browserName: chrome
+  screenResolution: 1920x1080
+  headless: true
+  port: 4444
+  startupArgs:
+    - "--disable-dev-shm-usage"
+    - "--no-sandbox"
+  env:
+    SE_NODE_SESSION_TIMEOUT: "300"
+    SE_NODE_OVERRIDE_MAX_SESSIONS: "true"
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+    limits:
+      cpu: "1000m"
+      memory: "1024Mi"

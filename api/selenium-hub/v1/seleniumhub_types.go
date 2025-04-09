@@ -17,19 +17,54 @@ limitations under the License.
 package v1
 
 import (
+	seleniumcommonv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-common/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+type SeleniumHubRef struct {
+	// Name is the name of the Selenium Hub.
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Pattern=`^[a-zA-Z0-9-]+$`
+	Name string `json:"name"`
+	// Namespace is the namespace where the Selenium Hub is deployed.
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Pattern=`^[a-zA-Z0-9-]+$`
+	Namespace string `json:"namespace"`
+}
+
 // SeleniumHubSpec defines the desired state of SeleniumHub
 type SeleniumHubSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of SeleniumHub. Edit seleniumhub_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// GridRef is a reference to the Selenium Grid configuration.
+	GridRef seleniumcommonv1.GridRef `json:"gridRef,omitempty"`
+
+	// Image is the container image for the Selenium Hub.
+	// e.g., "selenium/hub:4.8.3-20230321"
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Pattern=`^.+:.*$`
+	Image string `json:"image"`
+
+	// Replicas indicates how many Hub instances to run in parallel.
+	// Typically, you only need 1 Hub replica for Selenium Grid,
+	// but you can scale horizontally if your use case supports it.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=1
+	Replicas int32 `json:"replicas,omitempty"`
+
+	// ServiceType defines how the Hub is exposed inside (or outside) the cluster.
+	// Acceptable values can include ClusterIP, NodePort, LoadBalancer, etc.
+	// +kubebuilder:validation:Enum=ClusterIP;NodePort;LoadBalancer
+	// +kubebuilder:default=ClusterIP
+	ServiceType string `json:"serviceType,omitempty"`
+
+	// Port on which the Hub listens. Typically 4444 for Selenium.
+	// +kubebuilder:default=4444
+	Port int32 `json:"port,omitempty"`
 }
 
 // SeleniumHubStatus defines the observed state of SeleniumHub

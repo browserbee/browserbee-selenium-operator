@@ -17,6 +17,8 @@ limitations under the License.
 package v1
 
 import (
+	v1seleniumhub "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
+	v1seleniumnode "github.com/browserbee/browserbee-selenium-operator/api/selenium-node/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -28,8 +30,12 @@ type SeleniumGridSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of SeleniumGrid. Edit seleniumgrid_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Hub defines the Selenium Hub configuration (image, replicas, ports, etc.).
+	Hub v1seleniumhub.SeleniumHub `json:"hub"`
+	// Nodes is a list of node configurations (Chrome, Firefox, etc.).
+	// This allows you to define multiple node types in a single CR.
+	// +kubebuilder:validation:MinItems=1
+	Nodes []v1seleniumnode.SeleniumNode `json:"nodes,omitempty"`
 }
 
 // SeleniumGridStatus defines the observed state of SeleniumGrid

@@ -6,4 +6,15 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: seleniumgrid-sample
 spec:
-  # TODO(user): Add fields here
+  hub:
+    spec:
+      image: selenium/hub:4.21.0
+      replicas: 1
+  nodes:
+    - spec:
+        image: selenium/node-chromium:latest
+        replicas: 2
+    - spec:
+        image: selenium/node-firefox:latest
+        replicas: 2
+
