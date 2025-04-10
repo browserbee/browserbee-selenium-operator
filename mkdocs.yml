@@ -1,5 +1,5 @@
 site_name: BrowserBee Selenium Operator
-site_url: "https://docs.browserbee.io"
+site_url: "https://selenium-operator.browserbee.io"
 
 theme:
   name: material
