@@ -1,0 +1,30 @@
+apiVersion: selenium-grid.browserbee.io/v1
+kind: SeleniumGrid
+metadata:
+  labels:
+    app.kubernetes.io/name: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumgrid-sample
+spec:
+  hub:
+    version: latest
+  nodes:
+    - browser: chromium
+      version: latest
+      replicas: 2
+      screenWidth: 1920
+      screenHeight: 1080
+      screenDepth: 24
+      screenDPI: 96
+      maxSessions: 2
+      sessionTimeout: 30
+    - browser: firefox
+      version: latest
+      replicas: 2
+      screenWidth: 1920
+      screenHeight: 1080
+      screenDepth: 24
+      screenDPI: 96
+      maxSessions: 2
+      sessionTimeout: 30
+
