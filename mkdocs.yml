@@ -10,7 +10,7 @@ theme:
     accent: blue
 
 nav:
-  - Home: documentation/index.md
+  - Home: index.md
   - Downloads:
       - Selenium Operator: downloads/index.md
 
