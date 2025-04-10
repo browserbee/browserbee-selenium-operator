@@ -14,24 +14,6 @@ resources:
     namespaced: true
   controller: true
   domain: browserbee.io
-  group: selenium-test-suite
-  kind: SeleniumTestSuite
-  path: github.com/browserbee/browserbee-selenium-operator/api/selenium-test-suite/v1
-  version: v1
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: browserbee.io
-  group: selenium-test-case
-  kind: SeleniumTestCase
-  path: github.com/browserbee/browserbee-selenium-operator/api/selenium-test-case/v1
-  version: v1
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: browserbee.io
   group: selenium-grid
   kind: SeleniumGrid
   path: github.com/browserbee/browserbee-selenium-operator/api/selenium-grid/v1

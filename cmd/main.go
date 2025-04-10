@@ -38,14 +38,10 @@ import (
 	seleniumhubv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	seleniumnodev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-node/v1"
 	seleniumstandalonev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-standalone/v1"
-	seleniumtestcasev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-test-case/v1"
-	seleniumtestsuitev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-test-suite/v1"
 	seleniumgridcontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-grid"
 	seleniumhubcontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-hub"
 	seleniumnodecontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-node"
 	seleniumstandalonecontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-standalone"
-	seleniumtestcasecontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-test-case"
-	seleniumtestsuitecontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-test-suite"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -57,8 +53,6 @@ var (
 func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
-	utilruntime.Must(seleniumtestsuitev1.AddToScheme(scheme))
-	utilruntime.Must(seleniumtestcasev1.AddToScheme(scheme))
 	utilruntime.Must(seleniumgridv1.AddToScheme(scheme))
 	utilruntime.Must(seleniumhubv1.AddToScheme(scheme))
 	utilruntime.Must(seleniumnodev1.AddToScheme(scheme))
@@ -137,20 +131,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err = (&seleniumtestsuitecontroller.SeleniumTestSuiteReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "SeleniumTestSuite")
-		os.Exit(1)
-	}
-	if err = (&seleniumtestcasecontroller.SeleniumTestCaseReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "SeleniumTestCase")
-		os.Exit(1)
-	}
 	if err = (&seleniumgridcontroller.SeleniumGridReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),

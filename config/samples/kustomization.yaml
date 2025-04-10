@@ -1,7 +1,5 @@
 ## Append samples of your project ##
 resources:
-- selenium-test-suite_v1_seleniumtestsuite.yaml
-- selenium-test-case_v1_seleniumtestcase.yaml
 - selenium-grid_v1_seleniumgrid.yaml
 - selenium-hub_v1_seleniumhub.yaml
 - selenium-node_v1_seleniumnode.yaml
