@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://docs.browserbee.io/documentation/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/contribute/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/contribute/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/demos/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/demos/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/deployment/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/deployment/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/examples/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/examples/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/grid-api/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/grid-api/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/overview/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/overview/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/quick-start/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/quick-start/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/documentation/reference/</loc>
+         <loc>https://selenium-operator.browserbee.io/documentation/reference/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/downloads/</loc>
+         <loc>https://selenium-operator.browserbee.io/downloads/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://docs.browserbee.io/installation/</loc>
+         <loc>https://selenium-operator.browserbee.io/installation/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
 </urlset>
