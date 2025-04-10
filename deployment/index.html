@@ -8,24 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://selenium-operator.browserbee.io/documentation/quick-start/">
+        <link rel="canonical" href="https://selenium-operator.browserbee.io/deployment/">
       
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>Quick Start - BrowserBee Selenium Operator</title>
+        <title>Deployment - BrowserBee Selenium Operator</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#deployment" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href=".." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              Deployment
             
           </span>
         </div>
@@ -179,7 +179,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href=".." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -197,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -252,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../downloads/" class="md-nav__link">
+      <a href="../downloads/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -300,36 +300,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Requirements
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-create-a-kubernetes-cluster" class="md-nav__link">
+  <a href="#quickstart" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Create a Kubernetes Cluster
+      Quickstart
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-install-browserbee-selenium-operator" class="md-nav__link">
+  <a href="#image-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Install BrowserBee Selenium Operator
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-deploy-a-selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Deploy a Selenium Grid
+      Image Configuration
     </span>
   </a>
   
@@ -350,22 +341,54 @@
                   
 
 
-<h1 id="quick-start">Quick Start</h1>
-<h2 id="requirements">Requirements</h2>
+<h1 id="deployment">Deployment</h1>
+<p>This section describes how to deploy the operator into a Kubernetes cluster using the packaged release artifacts.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before deploying, ensure the following:</p>
 <ul>
-<li>Installed kubectl command-line tool.</li>
-<li>Installed kind command-line tool.</li>
+<li>You have access to a Kubernetes cluster (v1.22+ recommended).</li>
+<li><code>kubectl</code> is configured to point to your target cluster.</li>
+<li>Custom Resource Definitions (CRDs) must be installed prior to applying the operator.</li>
+<li>The container image is available on Quay at <code>quay.io/&lt;your-org&gt;/&lt;your-operator&gt;:&lt;version&gt;</code>.</li>
 </ul>
-<h2 id="1-create-a-kubernetes-cluster">1. Create a Kubernetes Cluster</h2>
-<pre><code class="language-shell">kind create cluster --name selenium-cluster
+<h2 id="quickstart">Quickstart</h2>
+<ol>
+<li><strong>Download the latest release</strong></li>
+</ol>
+<p>You can find the release YAMLs under <a href="https://github.com/&lt;your-org&gt;/&lt;your-repo&gt;/releases">GitHub Releases</a>. Each release includes:</p>
+<ul>
+<li><code>operator.yaml</code> – All required manifests bundled together</li>
+<li>
+<p><code>crds/</code> – Individual CRDs, if you want to install them separately</p>
+</li>
+<li>
+<p><strong>Apply the manifests</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">kubectl apply -f https://github.com/&lt;your-org&gt;/&lt;your-repo&gt;/releases/download/vX.Y.Z/operator.yaml
 </code></pre>
-<h2 id="2-install-browserbee-selenium-operator">2. Install BrowserBee Selenium Operator</h2>
-<pre><code class="language-shell">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/install.yaml
+<p>Or, if installing CRDs separately:</p>
+<pre><code class="language-bash">kubectl apply -f https://github.com/&lt;your-org&gt;/&lt;your-repo&gt;/releases/download/vX.Y.Z/crds/
+kubectl apply -f https://github.com/&lt;your-org&gt;/&lt;your-repo&gt;/releases/download/vX.Y.Z/operator.yaml
 </code></pre>
-<p>This will create new namespace, <code>browserbee-selenium-operator-system</code>, where BrowserBee services and application resources will live.</p>
-<h2 id="3-deploy-a-selenium-grid">3. Deploy a Selenium Grid</h2>
-<pre><code class="language-shell">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/selenium-grid/install.yaml
+<ol>
+<li><strong>Verify the deployment</strong></li>
+</ol>
+<pre><code class="language-bash">kubectl get pods -n &lt;operator-namespace&gt;
+kubectl get deployments -n &lt;operator-namespace&gt;
 </code></pre>
+<ol>
+<li><strong>Apply a Custom Resource</strong></li>
+</ol>
+<p>After deployment, you can apply your custom resource to start using the operator:</p>
+<pre><code class="language-bash">kubectl apply -f config/samples/&lt;sample-cr&gt;.yaml
+</code></pre>
+<h2 id="image-configuration">Image Configuration</h2>
+<p>The operator image is hosted on Quay:</p>
+<pre><code>quay.io/&lt;your-org&gt;/&lt;your-operator&gt;:vX.Y.Z
+</code></pre>
+<p>You can customize the image tag or repository in the deployment YAML or Helm values.
+f you’d like a Helm-flavored version or Kustomize-based instructions instead. Want me to auto-generate <code>operator.yaml</code> packaging as part of a GitHub Action too?</p>
 
 
 
@@ -433,10 +456,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

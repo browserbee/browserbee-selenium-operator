@@ -8,24 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://selenium-operator.browserbee.io/documentation/examples/">
+        <link rel="canonical" href="https://selenium-operator.browserbee.io/quick-start/">
       
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>Examples - BrowserBee Selenium Operator</title>
+        <title>Quick Start - BrowserBee Selenium Operator</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#quick-start" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href=".." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Examples
+              Quick Start
             
           </span>
         </div>
@@ -179,7 +179,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href=".." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -197,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -252,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../downloads/" class="md-nav__link">
+      <a href="../downloads/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -293,6 +293,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-a-kubernetes-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create a Kubernetes Cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-install-browserbee-selenium-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Install BrowserBee Selenium Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-deploy-a-selenium-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deploy a Selenium Grid
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -306,7 +350,22 @@
                   
 
 
-<h1 id="examples">Examples</h1>
+<h1 id="quick-start">Quick Start</h1>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Installed kubectl command-line tool.</li>
+<li>Installed kind command-line tool.</li>
+</ul>
+<h2 id="1-create-a-kubernetes-cluster">1. Create a Kubernetes Cluster</h2>
+<pre><code class="language-shell">kind create cluster --name selenium-cluster
+</code></pre>
+<h2 id="2-install-browserbee-selenium-operator">2. Install BrowserBee Selenium Operator</h2>
+<pre><code class="language-shell">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/install.yaml
+</code></pre>
+<p>This will create new namespace, <code>browserbee-selenium-operator-system</code>, where BrowserBee services and application resources will live.</p>
+<h2 id="3-deploy-a-selenium-grid">3. Deploy a Selenium Grid</h2>
+<pre><code class="language-shell">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/selenium-grid/install.yaml
+</code></pre>
 
 
 
@@ -374,10 +433,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>
