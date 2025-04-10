@@ -19,7 +19,6 @@ package seleniumgrid
 import (
 	"context"
 	"fmt"
-	seleniumcommonv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-common/v1"
 	seleniumhubv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	seleniumnodev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-node/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -86,14 +85,7 @@ func (r *SeleniumGridReconciler) reconcileHubCR(ctx context.Context, grid *selen
 			Name:      fmt.Sprintf("%s-hub", grid.Name),
 			Namespace: grid.Namespace,
 		},
-		Spec: seleniumhubv1.SeleniumHubSpec{
-			GridRef: seleniumcommonv1.GridRef{
-				Name:      grid.Name,
-				Namespace: grid.Namespace,
-			},
-			Image:    grid.Spec.Hub.Spec.Image,
-			Replicas: grid.Spec.Hub.Spec.Replicas,
-		},
+		Spec: grid.Spec.Hub,
 	}
 
 	if err := ctrl.SetControllerReference(grid, hubCR, r.Scheme); err != nil {
@@ -113,15 +105,15 @@ func (r *SeleniumGridReconciler) reconcileHubCR(ctx context.Context, grid *selen
 	return r.Update(ctx, &existing)
 }
 
-func (r *SeleniumGridReconciler) reconcileNodeCR(ctx context.Context, grid *seleniumgridv1.SeleniumGrid, nodeCfg seleniumnodev1.SeleniumNode, index int) error {
+func (r *SeleniumGridReconciler) reconcileNodeCR(ctx context.Context, grid *seleniumgridv1.SeleniumGrid, nodeCfg seleniumnodev1.SeleniumNodeSpec, index int) error {
 	nodeCR := &seleniumnodev1.SeleniumNode{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      fmt.Sprintf("%s-node-%d", grid.Name, index),
 			Namespace: grid.Namespace,
 		},
 		Spec: seleniumnodev1.SeleniumNodeSpec{
-			Image:    nodeCfg.Spec.Image,
-			Replicas: nodeCfg.Spec.Replicas,
+			Version:  nodeCfg.Version,
+			Replicas: nodeCfg.Replicas,
 			HubRef: seleniumhubv1.SeleniumHubRef{
 				Name:      fmt.Sprintf("%s-hub", grid.Name),
 				Namespace: grid.Namespace,

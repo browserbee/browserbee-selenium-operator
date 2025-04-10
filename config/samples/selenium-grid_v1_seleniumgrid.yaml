@@ -7,14 +7,24 @@ metadata:
   name: seleniumgrid-sample
 spec:
   hub:
-    spec:
-      image: selenium/hub:4.21.0
-      replicas: 1
+    version: latest
   nodes:
-    - spec:
-        image: selenium/node-chromium:latest
-        replicas: 2
-    - spec:
-        image: selenium/node-firefox:latest
-        replicas: 2
+    - browser: chromium
+      version: latest
+      replicas: 2
+      screenWidth: 1920
+      screenHeight: 1080
+      screenDepth: 24
+      screenDPI: 96
+      maxSessions: 2
+      sessionTimeout: 30
+    - browser: firefox
+      version: latest
+      replicas: 2
+      screenWidth: 1920
+      screenHeight: 1080
+      screenDepth: 24
+      screenDPI: 96
+      maxSessions: 2
+      sessionTimeout: 30
 

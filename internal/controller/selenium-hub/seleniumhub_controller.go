@@ -18,6 +18,7 @@ package seleniumhub
 
 import (
 	"context"
+	"fmt"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -103,11 +104,15 @@ func (r *SeleniumHubReconciler) reconcileDeployment(ctx context.Context, hub *se
 					Containers: []corev1.Container{
 						{
 							Name:  "selenium-hub",
-							Image: hub.Spec.Image,
+							Image: fmt.Sprintf("selenium/hub:%s", hub.Spec.Version),
 							Ports: []corev1.ContainerPort{
 								{ContainerPort: 4442},
 								{ContainerPort: 4443},
 								{ContainerPort: 4444},
+							},
+							Env: []corev1.EnvVar{
+								{Name: "SE_LOG_LEVEL", Value: fmt.Sprintf("%s", hub.Spec.LogLevel)},
+								{Name: "SE_ENABLE_TRACING", Value: fmt.Sprintf("%t", hub.Spec.EnableTracing)},
 							},
 						},
 					},

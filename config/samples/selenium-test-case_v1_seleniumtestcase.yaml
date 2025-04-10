@@ -8,8 +8,9 @@ metadata:
 spec:
   schedule: "* * * * *"  # Cron format for scheduling
   hubRef:
-    name: seleniumhub-sample
+    name: seleniumgrid-sample-hub
     namespace: default
+
   webDriver:
     browser: chrome
     headless: false
@@ -19,11 +20,17 @@ spec:
       height: 1080
   steps:
     - name: "Go to Google"
-      action: "navigate"
-      target: "https://www.google.com"
+      action: "navigate"  # navigate, input, click, waitFor, assert, screenshot, pause
+      target: "https://www.google.com"       # For `navigate` action
     - name: "Enter 'cats' into search box"
       action: "input"
+      target: "https://www.google.com"
       selector:
-        strategy: "css"
-        value: "textarea[name='q']"
-      value: "cats"
+        strategy: "name"  # id, name, css, xpath, class, tag
+        value: "q"      # For `input` or `assert`
+      fallbacks:
+        - strategy: "css"
+          value: "input[name='q']"
+      retries:
+        attempts: 3
+        delay: 2

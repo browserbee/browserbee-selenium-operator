@@ -24,6 +24,15 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+type Browser string
+
+const (
+	// BrowserChromium represents the Chrome browser.
+	BrowserChromium Browser = "chromium"
+	// BrowserFirefox represents the Firefox browser.
+	BrowserFirefox Browser = "firefox"
+)
+
 // SeleniumNodeSpec defines the desired state of SeleniumNode
 type SeleniumNodeSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
@@ -32,16 +41,49 @@ type SeleniumNodeSpec struct {
 	// GridRef is a reference to the Selenium Grid configuration.
 	HubRef seleniumhubv1.SeleniumHubRef `json:"hubRef,omitempty"`
 
-	// Image is the container image for this browser node.
-	// e.g., "selenium/node-chrome:4.8.3-20230321"
-	// +kubebuilder:validation:Required
-	// +kubebuilder:validation:Pattern=`^.+:.*$`
-	Image string `json:"image"`
+	// Browser is the type of browser to run on this node.
+	// +kubebuilder:validation:Enum=chromium;firefox
+	// +kubebuilder:default=chromium
+	Browser Browser `json:"browser,omitempty"`
+
+	// Version is the version of the browser node.
+	// +kubebuilder:default="latest"
+	Version string `json:"version"`
 
 	// Replicas is the number of node replicas to run for this browser type.
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default=1
 	Replicas int32 `json:"replicas,omitempty"`
+
+	// ScreenWidth is the width of the browser window.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=1920
+	ScreenWidth int32 `json:"screenWidth,omitempty"`
+
+	// ScreenHeight is the height of the browser window.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=1080
+	ScreenHeight int32 `json:"screenHeight,omitempty"`
+
+	// ScreenDepth is the color depth of the browser window.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=24
+	ScreenDepth int32 `json:"screenDepth,omitempty"`
+
+	// ScreenDPI is the DPI (dots per inch) of the browser window.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=96
+	ScreenDPI int32 `json:"screenDPI,omitempty"`
+
+	// MaxSessions is the maximum number of concurrent sessions this node can handle.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=1
+	MaxSessions int32 `json:"maxSessions,omitempty"`
+
+	// SessionTimeout is the timeout for a session in seconds.
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default=60
+	SessionTimeout int32 `json:"sessionTimeout,omitempty"`
 
 	// Resources (optional) might define CPU/memory requests & limits (not shown here),
 	// environment variables, or other container configs for the node.

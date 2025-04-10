@@ -25,6 +25,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/util/retry"
 	"reflect"
+	"strconv"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -74,9 +75,9 @@ func (r *SeleniumNodeReconciler) Reconcile(ctx context.Context, req ctrl.Request
 
 func commonLabels(node *seleniumnodev1.SeleniumNode) map[string]string {
 	return map[string]string{
-		"app":            node.Name,
-		"grid-name":      node.Spec.HubRef.Name,
-		"grid-namespace": node.Spec.HubRef.Namespace,
+		"app":           node.Name,
+		"hub-name":      node.Spec.HubRef.Name,
+		"hub-namespace": node.Spec.HubRef.Namespace,
 	}
 }
 
@@ -98,14 +99,21 @@ func (r *SeleniumNodeReconciler) reconcileDeployment(ctx context.Context, node *
 					Containers: []corev1.Container{
 						{
 							Name:  "selenium-node",
-							Image: node.Spec.Image,
+							Image: fmt.Sprintf("selenium/node-%s:%s", node.Spec.Browser, node.Spec.Version),
 							Ports: []corev1.ContainerPort{
 								{ContainerPort: 5555},
 							},
 							Env: []corev1.EnvVar{
-								{Name: "SE_EVENT_BUS_HOST", Value: fmt.Sprintf("%s", node.Spec.HubRef.Name)},
+								{Name: "SE_EVENT_BUS_HOST", Value: node.Spec.HubRef.Name},
 								{Name: "SE_EVENT_BUS_PUBLISH_PORT", Value: "4442"},
 								{Name: "SE_EVENT_BUS_SUBSCRIBE_PORT", Value: "4443"},
+								{Name: "SE_SCREEN_WIDTH", Value: strconv.Itoa(int(node.Spec.ScreenWidth))},
+								{Name: "SE_SCREEN_HEIGHT", Value: strconv.Itoa(int(node.Spec.ScreenHeight))},
+								{Name: "SE_SCREEN_DEPTH", Value: strconv.Itoa(int(node.Spec.ScreenDepth))},
+								{Name: "SE_SCREEN_DPI", Value: strconv.Itoa(int(node.Spec.ScreenDPI))},
+								{Name: "SE_NODE_MAX_SESSIONS", Value: strconv.Itoa(int(node.Spec.MaxSessions))},
+								//{Name: "SE_NODE_HOST", Value: "localhost"},
+								{Name: "SE_NODE_SESSION_TIMEOUT", Value: strconv.Itoa(int(node.Spec.SessionTimeout))},
 							},
 						},
 					},

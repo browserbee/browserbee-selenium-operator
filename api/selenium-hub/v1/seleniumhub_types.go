@@ -24,6 +24,18 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+// LogLevel defines the logging level for the Selenium Hub.
+// +kubebuilder:validation:Enum=DEBUG;INFO;WARN;ERROR;FATAL
+type LogLevel string
+
+const (
+	LogLevelDebug LogLevel = "DEBUG"
+	LogLevelInfo  LogLevel = "INFO"
+	LogLevelWarn  LogLevel = "WARN"
+	LogLevelError LogLevel = "ERROR"
+	LogLevelFatal LogLevel = "FATAL"
+)
+
 type SeleniumHubRef struct {
 	// Name is the name of the Selenium Hub.
 	// +kubebuilder:validation:Required
@@ -43,11 +55,13 @@ type SeleniumHubSpec struct {
 	// GridRef is a reference to the Selenium Grid configuration.
 	GridRef seleniumcommonv1.GridRef `json:"gridRef,omitempty"`
 
-	// Image is the container image for the Selenium Hub.
-	// e.g., "selenium/hub:4.8.3-20230321"
 	// +kubebuilder:validation:Required
-	// +kubebuilder:validation:Pattern=`^.+:.*$`
-	Image string `json:"image"`
+	// +kubebuilder:default="4.21.0"
+	Version string `json:"version,omitempty"`
+
+	// EnableTracing enables tracing for the Selenium Hub.
+	// +kubebuilder:default=false
+	EnableTracing bool `json:"enableTracing,omitempty"`
 
 	// Replicas indicates how many Hub instances to run in parallel.
 	// Typically, you only need 1 Hub replica for Selenium Grid,
@@ -56,15 +70,9 @@ type SeleniumHubSpec struct {
 	// +kubebuilder:default=1
 	Replicas int32 `json:"replicas,omitempty"`
 
-	// ServiceType defines how the Hub is exposed inside (or outside) the cluster.
-	// Acceptable values can include ClusterIP, NodePort, LoadBalancer, etc.
-	// +kubebuilder:validation:Enum=ClusterIP;NodePort;LoadBalancer
-	// +kubebuilder:default=ClusterIP
-	ServiceType string `json:"serviceType,omitempty"`
-
-	// Port on which the Hub listens. Typically 4444 for Selenium.
-	// +kubebuilder:default=4444
-	Port int32 `json:"port,omitempty"`
+	// LogLevel specifies the logging level for the Selenium Hub.
+	// Valid values are "DEBUG", "INFO", "WARN", "ERROR", and "FATAL".
+	LogLevel LogLevel `json:"logLevel,omitempty"`
 }
 
 // SeleniumHubStatus defines the observed state of SeleniumHub

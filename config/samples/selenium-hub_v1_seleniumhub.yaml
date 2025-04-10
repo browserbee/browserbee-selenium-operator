@@ -6,7 +6,8 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: seleniumhub-sample
 spec:
-  image: selenium/hub:4.21.0
-  replicas: 1
-  serviceType: ClusterIP
-  port: 4444
+  version: 4.21.0
+  logLevel: INFO
+  enableTracing: false
+
+

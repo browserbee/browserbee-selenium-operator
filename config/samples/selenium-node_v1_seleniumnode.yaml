@@ -9,6 +9,14 @@ spec:
   hubRef:
     name: seleniumhub-sample
     namespace: default
-  image: selenium/node-chromium:latest
-  replicas: 2
+  browser: chromium
+  version: latest
+  replicas: 1
+  screenWidth: 1920
+  screenHeight: 1080
+  screenDepth: 24
+  screenDPI: 96
+  maxSessions: 2
+  sessionTimeout: 30
 
+ 

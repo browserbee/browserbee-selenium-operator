@@ -67,6 +67,15 @@ spec:
                       properties:
                         description:
                           type: string
+                        hubRef:
+                          properties:
+                            name:
+                              description: Name of the hub
+                              type: string
+                            namespace:
+                              description: Namespace of the hub
+                              type: string
+                          type: object
                         schedule:
                           type: string
                         steps:
@@ -78,8 +87,24 @@ spec:
                                 type: string
                               expected:
                                 type: string
+                              fallbacks:
+                                items:
+                                  properties:
+                                    strategy:
+                                      type: string
+                                    value:
+                                      type: string
+                                  type: object
+                                type: array
                               name:
                                 type: string
+                              retries:
+                                properties:
+                                  attempts:
+                                    type: integer
+                                  delay:
+                                    type: integer
+                                type: object
                               selector:
                                 properties:
                                   strategy:

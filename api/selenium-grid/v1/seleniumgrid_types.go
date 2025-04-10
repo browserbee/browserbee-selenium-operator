@@ -31,11 +31,11 @@ type SeleniumGridSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Hub defines the Selenium Hub configuration (image, replicas, ports, etc.).
-	Hub v1seleniumhub.SeleniumHub `json:"hub"`
+	Hub v1seleniumhub.SeleniumHubSpec `json:"hub"`
 	// Nodes is a list of node configurations (Chrome, Firefox, etc.).
 	// This allows you to define multiple node types in a single CR.
 	// +kubebuilder:validation:MinItems=1
-	Nodes []v1seleniumnode.SeleniumNode `json:"nodes,omitempty"`
+	Nodes []v1seleniumnode.SeleniumNodeSpec `json:"nodes,omitempty"`
 }
 
 // SeleniumGridStatus defines the observed state of SeleniumGrid

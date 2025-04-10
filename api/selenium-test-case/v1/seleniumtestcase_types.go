@@ -53,14 +53,21 @@ type WindowSize struct {
 	Height int `json:"height,omitempty"`
 }
 
+type Retries struct {
+	Attempts int `json:"attempts,omitempty"`
+	Delay    int `json:"delay,omitempty"`
+}
+
 type Step struct {
-	Name      string    `json:"name,omitempty"`
-	Action    string    `json:"action,omitempty"`
-	Target    string    `json:"target,omitempty"`
-	Selector  *Selector `json:"selector,omitempty"`
-	Value     string    `json:"value,omitempty"`
-	Expected  string    `json:"expected,omitempty"`
-	Condition string    `json:"condition,omitempty"`
+	Name      string      `json:"name,omitempty"`
+	Action    string      `json:"action,omitempty"`
+	Target    string      `json:"target,omitempty"`
+	Selector  *Selector   `json:"selector,omitempty"`
+	Fallbacks []*Selector `json:"fallbacks,omitempty"`
+	Retries   Retries     `json:"retries,omitempty"`
+	Value     string      `json:"value,omitempty"`
+	Expected  string      `json:"expected,omitempty"`
+	Condition string      `json:"condition,omitempty"`
 }
 
 type Selector struct {

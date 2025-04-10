@@ -39,6 +39,10 @@ spec:
           spec:
             description: SeleniumHubSpec defines the desired state of SeleniumHub
             properties:
+              enableTracing:
+                default: false
+                description: EnableTracing enables tracing for the Selenium Hub.
+                type: boolean
               gridRef:
                 description: GridRef is a reference to the Selenium Grid configuration.
                 properties:
@@ -49,17 +53,17 @@ spec:
                 required:
                 - name
                 type: object
-              image:
+              logLevel:
                 description: |-
-                  Image is the container image for the Selenium Hub.
-                  e.g., "selenium/hub:4.8.3-20230321"
-                pattern: ^.+:.*$
+                  LogLevel specifies the logging level for the Selenium Hub.
+                  Valid values are "DEBUG", "INFO", "WARN", "ERROR", and "FATAL".
+                enum:
+                - DEBUG
+                - INFO
+                - WARN
+                - ERROR
+                - FATAL
                 type: string
-              port:
-                default: 4444
-                description: Port on which the Hub listens. Typically 4444 for Selenium.
-                format: int32
-                type: integer
               replicas:
                 default: 1
                 description: |-
@@ -69,18 +73,9 @@ spec:
                 format: int32
                 minimum: 1
                 type: integer
-              serviceType:
-                default: ClusterIP
-                description: |-
-                  ServiceType defines how the Hub is exposed inside (or outside) the cluster.
-                  Acceptable values can include ClusterIP, NodePort, LoadBalancer, etc.
-                enum:
-                - ClusterIP
-                - NodePort
-                - LoadBalancer
+              version:
+                default: 4.21.0
                 type: string
-            required:
-            - image
             type: object
           status:
             description: SeleniumHubStatus defines the observed state of SeleniumHub
