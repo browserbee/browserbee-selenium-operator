@@ -1,10 +1,10 @@
 # browserbee-selenium-operator
-To provide a Kubernetes-native way to define, run, and scale automated browser tests using WebDriver.
+To provide a Kubernetes-native way to define, run, and scale Selenium Grid.
 
-// **Use:** Install BrowserBee in your Kubernetes cluster, write test specifications as CRDs, and manage test runs via GitOps or API workflows.
+// **Use:** Install BrowserBee in your Kubernetes cluster and manage Selenium Grids via GitOps workflows.
 
 ## Description
-BrowserBee is a cloud-agnostic, Kubernetes-native platform for automating the lifecycle of WebDriver-based browser testing and infrastructure. Designed with GitOps principles in mind, it allows developers and QA teams to declaratively define, execute, and observe browser tests using familiar Kubernetes workflows and CI/CD pipelines. BrowserBee streamlines the complexities of browser test orchestration by introducing a custom Kubernetes Operator and CRDs that handle everything from test grid provisioning to test run execution and cleanup. The project integrates with key tools in the CNCF landscape, including ArgoCD for GitOps workflow and Prometheus for observability. By bringing modern cloud-native principles to the world of browser automation, BrowserBee bridges the gap between infrastructure as code and end-to-end quality assurance in highly scalable, multi-cloud environments.
+BrowserBee Selenium Operator is a cloud-agnostic, Kubernetes-native platform for automating the lifecycle of Selenium Grid infrastructure. Designed with GitOps principles in mind, it allows developers and QA teams to declaratively define Selenium Grids for Kubernetes workflows and CI/CD pipelines. The project integrates with key tools in the CNCF landscape, including ArgoCD for GitOps workflow and Prometheus for observability. By bringing modern cloud-native principles to the world of Selenium, BrowserBee bridges the gap between infrastructure as code and end-to-end quality assurance in highly scalable, multi-cloud environments.
 
 ## Getting Started
 

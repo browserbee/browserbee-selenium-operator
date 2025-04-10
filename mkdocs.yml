@@ -1,0 +1,27 @@
+site_name: Selenium Operator
+site_url:
+
+theme:
+  name: material
+  features:
+#    - navigation.tabs
+    - navigation.top
+  palette:
+    primary: blue
+    accent: blue
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+
+nav:
+  - Home: index.md
+  - Downloads:
+      - Selenium Operator: downloads/index.md
+  - Documentation:
+      - Overview: documentation/index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/strimzi
+    - icon: fontawesome/brands/slack
+      link: https://slack.strimzi.io
