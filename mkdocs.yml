@@ -5,16 +5,29 @@ theme:
   name: material
   features:
     - navigation.top
+  icon:
+    repo: fontawesome/brands/github
   palette:
-    primary: blue
-    accent: blue
+    - primary: blue
+      accent: blue
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 nav:
-  - Home: index.md
-  - Downloads:
-      - Selenium Operator: downloads/index.md
+  - Overview: index.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/browserbee
+
+repo_url: https://github.com/browserbee/browserbee-selenium-operator
+repo_name: GitHub
