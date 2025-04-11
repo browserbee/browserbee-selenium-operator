@@ -373,11 +373,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-manifests" class="md-nav__link">
+  <a href="#manifests" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Manifests
+      Manifests
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Manifests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selenium-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Grid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-standalone-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Standalone Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -521,11 +563,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-manifests" class="md-nav__link">
+  <a href="#manifests" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Manifests
+      Manifests
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Manifests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selenium-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Grid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-standalone-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium Standalone Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -578,7 +662,7 @@
 <p><a href="https://github.com/browserbee/browserbee-selenium-operator/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/browserbee/browserbee-selenium-operator?logo=github" /></a>
 <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/browserbee/browserbee-selenium-operator" /></a>
 <a href="https://join.slack.com/t/browserbee/shared_invite/xyz"><img alt="Slack" src="https://img.shields.io/badge/chat-slack-purple?logo=slack" /></a></p>
-<p><strong>BrowserBee Selenium Operator</strong> is a Kubernetes‑native solution that lets you <strong>define, deploy, and scale Selenium Grid resources using Custom Resource Definitions (CRDs)</strong>. Manage your browser‑automation infrastructure the same way you manage the rest of your cloud‑native stack—declaratively, version‑controlled, and GitOps‑friendly.</p>
+<p><strong>BrowserBee Selenium Operator</strong> is a Kubernetes‑native solution that lets you <strong>define, deploy, and scale Selenium Grid resources using Custom Resource Definitions (CRDs)</strong>. Manage your browser‑automation infrastructure the same way you manage the rest of your cloud‑native stack—declaratively, version‑controlled, and GitOps‑friendly.</p>
 <p>Whether you are experimenting locally or orchestrating hundreds of parallel test sessions in production, this documentation will guide you from first cluster to advanced tuning.</p>
 <hr />
 <h2 id="why-browserbee-selenium-operator">Why BrowserBee Selenium Operator?</h2>
@@ -614,18 +698,18 @@
 </tbody>
 </table>
 <blockquote>
-<p><strong>DX Tip 🛠️</strong><br />
-Store your CRDs in the same repo as your application code and let <strong>Argo CD</strong> or <strong>Flux</strong> apply them automatically. This turns Selenium Grid changes into pull‑request reviews, CI checks, and instant rollbacks.</p>
+<p><strong>DX Tip️</strong><br />
+Store your CRDs in the same repo as your application code and let <strong>Argo CD</strong> or <strong>Flux</strong> apply them automatically. This turns Selenium Grid changes into pull‑request reviews, CI checks, and instant rollbacks.</p>
 </blockquote>
 <hr />
 <h2 id="architecture">Architecture</h2>
 <pre><code class="language-mermaid">flowchart TD
     subgraph Kubernetes Cluster
         direction LR
-        Operator[&quot;BrowserBee&lt;br&gt;Selenium Operator&quot;]
-        CRD[SeleniumGrid CRD]
-        Hub[Selenium Hub Deployment]
-        Nodes[Selenium Node StatefulSets]
+        Operator[&quot;BrowserBee&lt;br&gt;Selenium Operator&quot;]
+        CRD[SeleniumGrid CRD]
+        Hub[Selenium Hub Deployment]
+        Nodes[Selenium Node StatefulSets]
     end
     Operator -- watches --&gt; CRD
     Operator -- manages --&gt; Hub &amp; Nodes
@@ -636,34 +720,34 @@ Store your CRDs in the same repo as your application code and let <strong>Argo 
 <li>One or more <strong>Node</strong> StatefulSets register with the Hub to execute browser sessions.</li>
 </ul>
 <hr />
-<h2 id="quick-start">Quick Start</h2>
+<h2 id="quick-start">Quick Start</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
-<li><strong>kubectl</strong> ≥ 1.25</li>
-<li><strong>kind</strong> ≥ 0.20 (or any Kubernetes 1.25+ cluster)</li>
+<li><strong>kubectl</strong> ≥ 1.25</li>
+<li><strong>kind</strong> ≥ 0.20 (or any Kubernetes 1.25+ cluster)</li>
 </ul>
-<h3 id="1-create-a-local-cluster">1 — Create a local cluster</h3>
+<h3 id="1-create-a-local-cluster">1 — Create a local cluster</h3>
 <pre><code class="language-bash">kind create cluster --name selenium-cluster
 </code></pre>
-<h3 id="2-install-the-operator">2 — Install the Operator</h3>
+<h3 id="2-install-the-operator">2 — Install the Operator</h3>
 <pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/install.yaml
 </code></pre>
 <p>This installs all components in the <code>browserbee-selenium-operator-system</code> namespace.</p>
 <blockquote>
-<p><strong>DX Tip 🛠️</strong><br />
+<p><strong>Tip️</strong><br />
 Watch the rollout live:<br />
 <code>kubectl -n browserbee-selenium-operator-system get pods -w</code></p>
 </blockquote>
-<h3 id="3-spin-up-a-selenium-grid">3 — Spin up a Selenium Grid</h3>
+<h3 id="3-spin-up-a-selenium-grid">3 — Spin up a Selenium Grid</h3>
 <pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/selenium-grid/install.yaml
 </code></pre>
-<h3 id="4-verify">4 — Verify</h3>
+<h3 id="4-verify">4 — Verify</h3>
 <pre><code class="language-bash">kubectl get seleniumgrids
 kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 </code></pre>
 <p>Open the Grid console in your browser and start testing!</p>
 <hr />
-<h2 id="example-manifests">Example Manifests</h2>
+<h2 id="manifests">Manifests</h2>
 <p>Use the ready‑made samples to get productive in seconds:</p>
 <table>
 <thead>
@@ -674,46 +758,59 @@ kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostn
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/browserbee/browserbee-selenium-operator/blob/main/examples/selenium-grid.yaml"><code>selenium-grid.yaml</code></a></td>
-<td>Full Selenium Grid with Chrome &amp; Firefox nodes</td>
+<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml"><code>selenium-grid.yaml</code></a></td>
+<td>Full Selenium Grid with hub, Chrome &amp; Firefox nodes</td>
 </tr>
 <tr>
-<td><a href="https://github.com/browserbee/browserbee-selenium-operator/blob/main/examples/selenium-test.yaml"><code>selenium-test.yaml</code></a></td>
-<td>Kubernetes Job that runs a simple Selenium test</td>
+<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml"><code>selenium-hub.yaml</code></a></td>
+<td>Kubernetes deployment that runs a Selenium hub</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml"><code>selenium-node.yaml</code></a></td>
+<td>Kubernetes deployment that runs a Selenium node</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml"><code>selenium-standalone.yaml</code></a></td>
+<td>Kubernetes deployment that runs a Selenium standalone node</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-bash">kubectl apply -f examples/selenium-grid.yaml
-kubectl apply -f examples/selenium-test.yaml
+<h3 id="selenium-grid">Selenium Grid</h3>
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml
 </code></pre>
-<blockquote>
-<p><strong>Productivity Hint 🚀</strong><br />
-Parametrize these manifests with <strong>Helm</strong> or <strong>Kustomize</strong> to reuse them across environments.</p>
-</blockquote>
+<h3 id="selenium-hub">Selenium Hub</h3>
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml
+</code></pre>
+<h3 id="selenium-node">Selenium Node</h3>
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml
+</code></pre>
+<h3 id="selenium-standalone-node">Selenium Standalone Node</h3>
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml
+</code></pre>
 <hr />
 <h2 id="features">Features</h2>
 <ul>
-<li><strong>Declarative CRDs</strong> — define Hub, Nodes, browser versions, and autoscaling rules in YAML.</li>
-<li><strong>Zero‑downtime upgrades</strong> — rolling updates handled by the Operator.</li>
-<li><strong>Autoscaling</strong> — integrate with the Kubernetes Horizontal Pod Autoscaler.</li>
-<li><strong>Multi‑version support</strong> — run multiple browser versions side‑by‑side.</li>
-<li><strong>Metrics &amp; observability</strong> — scrape Prometheus metrics out‑of‑the‑box; dashboards included.</li>
-<li><strong>Extensible</strong> — add custom node images, sidecars, or plugins via standard Kubernetes patterns.</li>
+<li><strong>Declarative CRDs</strong> — define Hub, Nodes, browser versions, and autoscaling rules in YAML.</li>
+<li><strong>Zero‑downtime upgrades</strong> — rolling updates handled by the Operator.</li>
+<li><strong>Autoscaling</strong> — integrate with the Kubernetes Horizontal Pod Autoscaler.</li>
+<li><strong>Multi‑version support</strong> — run multiple browser versions side‑by‑side.</li>
+<li><strong>Metrics &amp; observability</strong> - scrape Prometheus metrics out‑of‑the‑box; dashboards included.</li>
+<li><strong>Extensible</strong> — add custom node images, sidecars, or plugins via standard Kubernetes patterns.</li>
 </ul>
 <hr />
-<h2 id="next-steps">Next Steps</h2>
+<h2 id="next-steps">Next Steps</h2>
 <ol>
-<li><strong>Helm Chart</strong> — package your Grid and ship it to any cluster.</li>
-<li><strong>GitOps</strong> — integrate with Argo CD or Flux for continuous delivery.</li>
-<li><strong>CI Integration</strong> — point your test runners to the Grid service endpoint.</li>
-<li><strong>Observability</strong> — import the provided Grafana dashboards and alerting rules.</li>
+<li><strong>Helm Chart</strong> — package your Grid and ship it to any cluster.</li>
+<li><strong>GitOps</strong> — integrate with Argo CD or Flux for continuous delivery.</li>
+<li><strong>CI Integration</strong> — point your test runners to the Grid service endpoint.</li>
+<li><strong>Observability</strong> — import the provided Grafana dashboards and alerting rules.</li>
 </ol>
 <hr />
-<h2 id="community-support">Community &amp; Support</h2>
+<h2 id="community-support">Community &amp; Support</h2>
 <ul>
 <li><strong>Slack</strong>: Join the conversation and get help from maintainers.</li>
-<li><strong>GitHub Discussions</strong>: Ask questions, propose features, and share tips.</li>
-<li><strong>Contributing Guide</strong>: PRs welcome! See <code>CONTRIBUTING.md</code>.</li>
+<li><strong>GitHub Discussions</strong>: Ask questions, propose features, and share tips.</li>
+<li><strong>Contributing Guide</strong>: PRs welcome! See <code>CONTRIBUTING.md</code>.</li>
 </ul>
 <hr />
 <div align="center" style="font-size:0.9em;margin-top:2rem;">
