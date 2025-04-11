@@ -72,15 +72,12 @@ spec:
         #  --docker-username=thomas-browserbee \
         #  --docker-password=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 \
         #  --docker-email=thomas@browserbee.com
-        #
-      imagePullSecrets:
-        - name: browserbee-ghcr-secret
       containers:
       - command:
         - /manager
         args:
         - --leader-elect
-        image: controller:latest
+        image: quay.io/browserbee/browserbee-selenium-operator:latest
         imagePullPolicy: Always
         name: manager
         securityContext:
