@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/browserbee/browserbee-selenium-operator)](LICENSE)
 [![Slack](https://img.shields.io/badge/chat-slack-purple?logo=slack)](https://join.slack.com/t/browserbee/shared_invite/xyz)
 
-**BrowserBee Selenium Operator** is a Kubernetes‑native solution that lets you **define, deploy, and scale Selenium Grid resources using Custom Resource Definitions (CRDs)**. Manage your browser‑automation infrastructure the same way you manage the rest of your cloud‑native stack—declaratively, version‑controlled, and GitOps‑friendly.
+**BrowserBee Selenium Operator** is a Kubernetes‑native solution that lets you **define, deploy, and scale Selenium Grid resources using Custom Resource Definitions (CRDs)**. Manage your browser‑automation infrastructure the same way you manage the rest of your cloud‑native stack—declaratively, version‑controlled, and GitOps‑friendly.
 
 Whether you are experimenting locally or orchestrating hundreds of parallel test sessions in production, this documentation will guide you from first cluster to advanced tuning.
 
@@ -19,8 +19,8 @@ Whether you are experimenting locally or orchestrating hundreds of parallel test
 | **Developer onboarding** | Tribal knowledge & runbooks | One‑liner `kubectl apply` installs Grid |
 | **Multi‑cluster adoption** | Re‑implement configs per cluster | Re‑use the same CRDs everywhere |
 
-> **DX Tip 🛠️**  
-> Store your CRDs in the same repo as your application code and let **Argo CD** or **Flux** apply them automatically. This turns Selenium Grid changes into pull‑request reviews, CI checks, and instant rollbacks.
+> **DX Tip️**  
+> Store your CRDs in the same repo as your application code and let **Argo CD** or **Flux** apply them automatically. This turns Selenium Grid changes into pull‑request reviews, CI checks, and instant rollbacks.
 
 ---
 
@@ -30,10 +30,10 @@ Whether you are experimenting locally or orchestrating hundreds of parallel test
 flowchart TD
     subgraph Kubernetes Cluster
         direction LR
-        Operator["BrowserBee<br>Selenium Operator"]
-        CRD[SeleniumGrid CRD]
-        Hub[Selenium Hub Deployment]
-        Nodes[Selenium Node StatefulSets]
+        Operator["BrowserBee<br>Selenium Operator"]
+        CRD[SeleniumGrid CRD]
+        Hub[Selenium Hub Deployment]
+        Nodes[Selenium Node StatefulSets]
     end
     Operator -- watches --> CRD
     Operator -- manages --> Hub & Nodes
@@ -45,33 +45,33 @@ flowchart TD
 
 ---
 
-## Quick Start
+## Quick Start
 
 ### Prerequisites
-* **kubectl** ≥ 1.25
-* **kind** ≥ 0.20 (or any Kubernetes 1.25+ cluster)
+* **kubectl** ≥ 1.25
+* **kind** ≥ 0.20 (or any Kubernetes 1.25+ cluster)
 
-### 1 — Create a local cluster
+### 1 — Create a local cluster
 ```bash
 kind create cluster --name selenium-cluster
 ```
 
-### 2 — Install the Operator
+### 2 — Install the Operator
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/install.yaml
 ```
 This installs all components in the `browserbee-selenium-operator-system` namespace.
 
-> **DX Tip 🛠️**  
+> **Tip️**  
 > Watch the rollout live:  
 > `kubectl -n browserbee-selenium-operator-system get pods -w`
 
-### 3 — Spin up a Selenium Grid
+### 3 — Spin up a Selenium Grid
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/selenium-grid/install.yaml
 ```
 
-### 4 — Verify
+### 4 — Verify
 ```bash
 kubectl get seleniumgrids
 kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
@@ -80,48 +80,62 @@ Open the Grid console in your browser and start testing!
 
 ---
 
-## Example Manifests
+## Manifests
 
 Use the ready‑made samples to get productive in seconds:
 
-| Example | Description |
-|---------|-------------|
-| [`selenium-grid.yaml`](https://github.com/browserbee/browserbee-selenium-operator/blob/main/examples/selenium-grid.yaml) | Full Selenium Grid with Chrome & Firefox nodes |
-| [`selenium-test.yaml`](https://github.com/browserbee/browserbee-selenium-operator/blob/main/examples/selenium-test.yaml) | Kubernetes Job that runs a simple Selenium test |
+| Example                                                                                                                              | Description                                                |
+|--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| [`selenium-grid.yaml`](https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml)             | Full Selenium Grid with hub, Chrome & Firefox nodes        |
+| [`selenium-hub.yaml`](https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml)               | Kubernetes deployment that runs a Selenium hub             |
+| [`selenium-node.yaml`](https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml)             | Kubernetes deployment that runs a Selenium node            |
+| [`selenium-standalone.yaml`](https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml) | Kubernetes deployment that runs a Selenium standalone node |
 
+### Selenium Grid
 ```bash
-kubectl apply -f examples/selenium-grid.yaml
-kubectl apply -f examples/selenium-test.yaml
+kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml
 ```
 
-> **Productivity Hint 🚀**  
-> Parametrize these manifests with **Helm** or **Kustomize** to reuse them across environments.
+### Selenium Hub
+```bash
+kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml
+```
+
+### Selenium Node
+```bash
+kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml
+```
+
+### Selenium Standalone Node
+```bash
+kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml
+```
 
 ---
 
 ## Features
 
-* **Declarative CRDs** — define Hub, Nodes, browser versions, and autoscaling rules in YAML.
-* **Zero‑downtime upgrades** — rolling updates handled by the Operator.
-* **Autoscaling** — integrate with the Kubernetes Horizontal Pod Autoscaler.
-* **Multi‑version support** — run multiple browser versions side‑by‑side.
-* **Metrics & observability** — scrape Prometheus metrics out‑of‑the‑box; dashboards included.
-* **Extensible** — add custom node images, sidecars, or plugins via standard Kubernetes patterns.
+* **Declarative CRDs** — define Hub, Nodes, browser versions, and autoscaling rules in YAML.
+* **Zero‑downtime upgrades** — rolling updates handled by the Operator.
+* **Autoscaling** — integrate with the Kubernetes Horizontal Pod Autoscaler.
+* **Multi‑version support** — run multiple browser versions side‑by‑side.
+* **Metrics & observability** - scrape Prometheus metrics out‑of‑the‑box; dashboards included.
+* **Extensible** — add custom node images, sidecars, or plugins via standard Kubernetes patterns.
 
 ---
 
-## Next Steps
-1. **Helm Chart** — package your Grid and ship it to any cluster.
-2. **GitOps** — integrate with Argo CD or Flux for continuous delivery.
-3. **CI Integration** — point your test runners to the Grid service endpoint.
-4. **Observability** — import the provided Grafana dashboards and alerting rules.
+## Next Steps
+1. **Helm Chart** — package your Grid and ship it to any cluster.
+2. **GitOps** — integrate with Argo CD or Flux for continuous delivery.
+3. **CI Integration** — point your test runners to the Grid service endpoint.
+4. **Observability** — import the provided Grafana dashboards and alerting rules.
 
 ---
 
-## Community & Support
+## Community & Support
 * **Slack**: Join the conversation and get help from maintainers.
-* **GitHub Discussions**: Ask questions, propose features, and share tips.
-* **Contributing Guide**: PRs welcome! See `CONTRIBUTING.md`.
+* **GitHub Discussions**: Ask questions, propose features, and share tips.
+* **Contributing Guide**: PRs welcome! See `CONTRIBUTING.md`.
 
 ---
 <div align="center" style="font-size:0.9em;margin-top:2rem;">
