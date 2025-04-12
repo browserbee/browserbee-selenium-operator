@@ -92,7 +92,50 @@ kubectl apply -f https://raw.githubusercontent.com/<org>/browserbee-selenium-ope
 ```
 
 ## Contributing
-// TODO(user): Add detailed information on how you would like others to contribute to this project
+
+We welcome contributions to the BrowserBee Selenium Operator project! Here's how you can get involved:
+
+1. **Report Issues**: If you encounter bugs or have feature requests, please open an issue in the GitHub repository.
+
+2. **Submit Pull Requests**: If you'd like to contribute code, fork the repository, create a new branch, and submit a pull request. Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+
+3. **Improve Documentation**: Help us improve the documentation by submitting updates or corrections.
+
+4. **Join Discussions**: Participate in discussions on issues and pull requests to help shape the future of the project.
+
+### Development Setup
+
+To set up your development environment:
+
+1. Clone the repository:
+   ```sh
+   git clone git@github.com:browserbee/browserbee-selenium-operator.git
+   ```
+
+2. Navigate to the project directory:
+   ```sh
+   cd browserbee-selenium-operator
+   ```
+
+3. Install dependencies:
+   ```sh
+   go mod tidy
+   ```
+
+4. Run tests to ensure everything is working:
+   ```sh
+   make test
+   ```
+
+### Coding Guidelines
+
+- Follow the [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments).
+- Write clear and concise commit messages.
+- Ensure all new code is covered by tests.
+
+### Code of Conduct
+
+Please note that this project is governed by a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 **NOTE:** Run `make help` for more information on all potential `make` targets
 
