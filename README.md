@@ -109,7 +109,7 @@ To set up your development environment:
 
 1. Clone the repository:
    ```sh
-   git clone git@github.com:<org>/browserbee-selenium-operator.git
+   git clone git@github.com:browserbee/browserbee-selenium-operator.git
    ```
 
 2. Navigate to the project directory:
