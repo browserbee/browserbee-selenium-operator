@@ -1,0 +1,38 @@
+run:
+  timeout: 5m
+
+issues:
+  exclude-use-default: false
+  exclude-rules:
+    - path: ^api/
+      linters:
+        - lll
+    - path: ^internal/
+      linters:
+        - dupl
+        - lll
+
+linters:
+  enable:
+    - dupl
+    - errcheck
+    - exportloopref
+    - goconst
+    - gocyclo
+    - gocritic
+    - deadcode
+    - revive
+    - gofmt
+    - goimports
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - prealloc
+    - staticcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused

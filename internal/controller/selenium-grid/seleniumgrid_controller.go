@@ -14,11 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+// Package seleniumgrid contains the controller logic for Selenium Grid.
 package seleniumgrid
 
 import (
 	"context"
 	"fmt"
+
 	seleniumhubv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	seleniumnodev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-node/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -32,7 +34,7 @@ import (
 	seleniumgridv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-grid/v1"
 )
 
-// SeleniumGridReconciler reconciles a SeleniumGrid object
+// SeleniumGridReconciler handles reconciliation for Selenium Grid.
 type SeleniumGridReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
@@ -46,7 +48,7 @@ type SeleniumGridReconciler struct {
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
-// TODO(user): Modify the Reconcile function to compare the state specified by
+// TODO: Modify the Reconcile function to compare the state specified by
 // the SeleniumGrid object against the actual cluster state, and then
 // perform operations to make the cluster state reflect the state specified by
 // the user.

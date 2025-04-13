@@ -19,13 +19,14 @@ package seleniumhub
 import (
 	"context"
 	"fmt"
+	"reflect"
+
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/client-go/util/retry"
-	"reflect"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -87,7 +88,7 @@ func commonLabels(hub *seleniumhubv1.SeleniumHub) map[string]string {
 }
 
 func (r *SeleniumHubReconciler) reconcileDeployment(ctx context.Context, hub *seleniumhubv1.SeleniumHub) error {
-	replicas := int32(hub.Spec.Replicas)
+	replicas := hub.Spec.Replicas
 	labels := commonLabels(hub)
 
 	desired := &appsv1.Deployment{
@@ -111,7 +112,7 @@ func (r *SeleniumHubReconciler) reconcileDeployment(ctx context.Context, hub *se
 								{ContainerPort: 4444},
 							},
 							Env: []corev1.EnvVar{
-								{Name: "SE_LOG_LEVEL", Value: fmt.Sprintf("%s", hub.Spec.LogLevel)},
+								{Name: "SE_LOG_LEVEL", Value: string(hub.Spec.LogLevel)},
 								{Name: "SE_ENABLE_TRACING", Value: fmt.Sprintf("%t", hub.Spec.EnableTracing)},
 							},
 						},
