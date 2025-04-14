@@ -121,6 +121,6 @@ Now that your operator is up and running, try one of the quickstart workflows:
 
 ## Advanced Setup (Optional)
 
-- [Helm-based installation (coming soon)]()
+- Helm-based installation (coming soon)
 - Deploy with Ingress support
 - Secure the operator with RBAC and TLS
