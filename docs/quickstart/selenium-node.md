@@ -15,16 +15,16 @@ Follow these steps to deploy a Selenium Node using the BrowserBee Selenium Opera
 
 1. **Apply the Selenium Node Custom Resource**:
 
-```bash
-kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/config/samples/selenium-node_v1_seleniumnode.yaml
-```
+    ```bash
+    kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/config/samples/selenium-node_v1_seleniumnode.yaml
+    ```
 
 2. **Verify the Deployment**:
    Check the status of the Selenium Node:
 
-```bash
-kubectl get seleniumnodes
-```
+    ```bash
+    kubectl get seleniumnodes
+    ```
 
 3. **Check Node Connectivity**:
    Ensure the Selenium Node is connected to the Selenium Hub:
