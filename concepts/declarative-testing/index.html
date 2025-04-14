@@ -8,24 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://selenium-operator.browserbee.io/">
+        <link rel="canonical" href="https://selenium-operator.browserbee.io/concepts/declarative-testing/">
       
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
-        <title>BrowserBee Selenium Operator</title>
+        <title>Declarative Testing - BrowserBee Selenium Operator</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#declarative-testing" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href="../.." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Declarative Testing
             
           </span>
         </div>
@@ -222,7 +222,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href="../.." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -249,32 +249,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,182 +263,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-browserbee-selenium-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why BrowserBee Selenium Operator?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-local-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      1 — Create a local cluster
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-install-the-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 — Install the Operator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spin-up-a-selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 — Spin up a Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 — Verify
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manifests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manifests
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Manifests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-hub" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Hub
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Node
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-standalone-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Standalone Node
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Community &amp; Support
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -492,73 +294,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-browserbee-selenium-operator" class="md-nav__link">
+  <a href="#what-is-declarative-selenium-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      Why BrowserBee Selenium Operator?
+      What Is Declarative Selenium Testing?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#why-use-declarative-selenium-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      Architecture
+      Why Use Declarative Selenium Tests?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#specification-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Start
+      🔧 Specification Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quick Start">
+    <nav class="md-nav" aria-label="🔧 Specification Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#webdriver-required" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      webDriver (required)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-create-a-local-cluster" class="md-nav__link">
+  <a href="#actions-required" class="md-nav__link">
     <span class="md-ellipsis">
-      1 — Create a local cluster
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-install-the-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 — Install the Operator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spin-up-a-selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 — Spin up a Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 — Verify
+      actions (required)
     </span>
   </a>
   
@@ -570,78 +345,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manifests" class="md-nav__link">
+  <a href="#full-yaml-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Manifests
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Manifests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-hub" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Hub
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Node
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-standalone-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Standalone Node
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Community &amp; Support
+      ✅ Full YAML Example
     </span>
   </a>
   
@@ -666,164 +372,167 @@
   
 
 
-<h1 id="overview">Overview</h1>
-<p><a href="https://github.com/browserbee/browserbee-selenium-operator/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/browserbee/browserbee-selenium-operator?logo=github" /></a>
-<a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/browserbee/browserbee-selenium-operator" /></a>
-<a href="https://join.slack.com/t/browserbee/shared_invite/xyz"><img alt="Slack" src="https://img.shields.io/badge/chat-slack-purple?logo=slack" /></a></p>
-<p><strong>BrowserBee Selenium Operator</strong> is a Kubernetes‑native solution that lets you <strong>define, deploy, and scale Selenium Grid resources using Custom Resource Definitions (CRDs)</strong>. Manage your browser‑automation infrastructure the same way you manage the rest of your cloud‑native stack—declaratively, version‑controlled, and GitOps‑friendly.</p>
-<p>Whether you are experimenting locally or orchestrating hundreds of parallel test sessions in production, this documentation will guide you from first cluster to advanced tuning.</p>
+<h1 id="declarative-testing">Declarative Testing</h1>
+<p>Declarative testing with the <strong>BrowserBee Selenium Operator</strong> lets you define browser workflows using Kubernetes-native YAML — based on the <a href="https://browserbee.io/selenium-workflow-specification.json">Selenium Workflow Specification</a>. This approach treats browser tests as infrastructure, making them versioned, composable, and automation-ready.</p>
 <hr />
-<h2 id="why-browserbee-selenium-operator">Why BrowserBee Selenium Operator?</h2>
+<h2 id="what-is-declarative-selenium-testing">What Is Declarative Selenium Testing?</h2>
+<p>Declarative testing is the practice of defining <strong>what</strong> to test (e.g., click this, assert that) in a structured way, instead of writing imperative test code in Python or Java. You express the desired workflow in a <code>SeleniumWorkflow</code> YAML Custom Resource, and the operator handles browser automation behind the scenes.</p>
+<hr />
+<h2 id="why-use-declarative-selenium-tests">Why Use Declarative Selenium Tests?</h2>
+<ul>
+<li><strong>No test scripts required</strong> — YAML does the work.</li>
+<li><strong>CI/CD and GitOps friendly</strong> — version, diff, and review tests in pull requests.</li>
+<li><strong>Portable</strong> — define tests once, run them on any Kubernetes cluster.</li>
+<li><strong>Reusable patterns</strong> — easily compose common UI flows.</li>
+</ul>
+<hr />
+<h2 id="specification-overview">🔧 Specification Overview</h2>
+<p>A <code>SeleniumWorkflow</code> is defined using the following fields:</p>
+<h3 id="webdriver-required"><code>webDriver</code> (required)</h3>
 <table>
 <thead>
 <tr>
-<th>Challenge</th>
-<th>Traditional Approach</th>
-<th>Operator Advantage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Environment drift</strong></td>
-<td>Hand‑crafted YAML or imperative <code>kubectl</code> commands</td>
-<td>Declarative CRDs version‑controlled in Git</td>
-</tr>
-<tr>
-<td><strong>Upgrades &amp; scaling</strong></td>
-<td>Manual image bumps and replica tweaks</td>
-<td>Reconciliation loop keeps desired state</td>
-</tr>
-<tr>
-<td><strong>Developer onboarding</strong></td>
-<td>Tribal knowledge &amp; runbooks</td>
-<td>One‑liner <code>kubectl apply</code> installs Grid</td>
-</tr>
-<tr>
-<td><strong>Multi‑cluster adoption</strong></td>
-<td>Re‑implement configs per cluster</td>
-<td>Re‑use the same CRDs everywhere</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>DX Tip️</strong><br />
-Store your CRDs in the same repo as your application code and let <strong>Argo CD</strong> or <strong>Flux</strong> apply them automatically. This turns Selenium Grid changes into pull‑request reviews, CI checks, and instant rollbacks.</p>
-</blockquote>
-<hr />
-<h2 id="architecture">Architecture</h2>
-<pre><code class="language-mermaid">flowchart TD
-    subgraph Kubernetes Cluster
-        direction LR
-        Operator[&quot;BrowserBee&lt;br&gt;Selenium Operator&quot;]
-        CRD[SeleniumGrid CRD]
-        Hub[Selenium Hub Deployment]
-        Nodes[Selenium Node StatefulSets]
-    end
-    Operator -- watches --&gt; CRD
-    Operator -- manages --&gt; Hub &amp; Nodes
-</code></pre>
-<ul>
-<li>The <strong>Operator</strong> reconciles every <code>SeleniumGrid</code> CR instance.</li>
-<li>A <strong>Hub</strong> deployment receives session requests.</li>
-<li>One or more <strong>Node</strong> StatefulSets register with the Hub to execute browser sessions.</li>
-</ul>
-<hr />
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li><strong>kubectl</strong> ≥ 1.25</li>
-<li><strong>kind</strong> ≥ 0.20 (or any Kubernetes 1.25+ cluster)</li>
-</ul>
-<h3 id="1-create-a-local-cluster">1 — Create a local cluster</h3>
-<pre><code class="language-bash">kind create cluster --name selenium-cluster
-</code></pre>
-<h3 id="2-install-the-operator">2 — Install the Operator</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/install.yaml
-</code></pre>
-<p>This installs all components in the <code>browserbee-selenium-operator-system</code> namespace.</p>
-<blockquote>
-<p><strong>Tip️</strong><br />
-Watch the rollout live:<br />
-<code>kubectl -n browserbee-selenium-operator-system get pods -w</code></p>
-</blockquote>
-<h3 id="3-spin-up-a-selenium-grid">3 — Spin up a Selenium Grid</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/selenium-grid/install.yaml
-</code></pre>
-<h3 id="4-verify">4 — Verify</h3>
-<pre><code class="language-bash">kubectl get seleniumgrids
-kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
-</code></pre>
-<p>Open the Grid console in your browser and start testing!</p>
-<hr />
-<h2 id="manifests">Manifests</h2>
-<p>Use the ready‑made samples to get productive in seconds:</p>
-<table>
-<thead>
-<tr>
-<th>Example</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml"><code>selenium-grid.yaml</code></a></td>
-<td>Full Selenium Grid with hub, Chrome &amp; Firefox nodes</td>
+<td><code>browser</code></td>
+<td>string</td>
+<td>One of: <code>chrome</code>, <code>firefox</code>, <code>edge</code>, <code>safari</code></td>
 </tr>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml"><code>selenium-hub.yaml</code></a></td>
-<td>Kubernetes deployment that runs a Selenium hub</td>
+<td><code>headless</code></td>
+<td>boolean</td>
+<td>Run in headless mode</td>
 </tr>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml"><code>selenium-node.yaml</code></a></td>
-<td>Kubernetes deployment that runs a Selenium node</td>
+<td><code>implicitWait</code></td>
+<td>int</td>
+<td>Wait time (seconds) for finding elements</td>
 </tr>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml"><code>selenium-standalone.yaml</code></a></td>
-<td>Kubernetes deployment that runs a Selenium standalone node</td>
+<td><code>remoteURL</code></td>
+<td>string</td>
+<td>Full WebDriver URL (e.g. from Selenium Grid)</td>
+</tr>
+<tr>
+<td><code>windowSize</code></td>
+<td>object</td>
+<td>Pixel width and height of browser window</td>
+</tr>
+<tr>
+<td><code>capabilities</code></td>
+<td>object</td>
+<td>Custom capabilities passed to the driver</td>
 </tr>
 </tbody>
 </table>
-<h3 id="selenium-grid">Selenium Grid</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml
-</code></pre>
-<h3 id="selenium-hub">Selenium Hub</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml
-</code></pre>
-<h3 id="selenium-node">Selenium Node</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml
-</code></pre>
-<h3 id="selenium-standalone-node">Selenium Standalone Node</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml
-</code></pre>
 <hr />
-<h2 id="features">Features</h2>
-<ul>
-<li><strong>Declarative CRDs</strong> — define Hub, Nodes, browser versions, and autoscaling rules in YAML.</li>
-<li><strong>Zero‑downtime upgrades</strong> — rolling updates handled by the Operator.</li>
-<li><strong>Autoscaling</strong> — integrate with the Kubernetes Horizontal Pod Autoscaler.</li>
-<li><strong>Multi‑version support</strong> — run multiple browser versions side‑by‑side.</li>
-<li><strong>Metrics &amp; observability</strong> - scrape Prometheus metrics out‑of‑the‑box; dashboards included.</li>
-<li><strong>Extensible</strong> — add custom node images, sidecars, or plugins via standard Kubernetes patterns.</li>
-</ul>
+<h3 id="actions-required"><code>actions</code> (required)</h3>
+<p>A list of test steps to execute in order.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>✅</td>
+<td>Unique name of the action</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>✅</td>
+<td>One of: <code>navigate</code>, <code>input</code>, <code>click</code>, <code>assert</code>, <code>screenshot</code></td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>🚫 (only for <code>navigate</code>)</td>
+<td>URL to open</td>
+</tr>
+<tr>
+<td><code>selector</code></td>
+<td>🚫 (for <code>click</code>, <code>input</code>, <code>assert</code>)</td>
+<td>How to locate elements</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>🚫 (for <code>input</code>, <code>assert</code>)</td>
+<td>Value to send or verify</td>
+</tr>
+<tr>
+<td><code>expected</code></td>
+<td>🚫 (for <code>assert</code>)</td>
+<td>Expected value</td>
+</tr>
+<tr>
+<td><code>condition</code></td>
+<td>🚫 (for <code>assert</code>)</td>
+<td><code>equals</code>, <code>contains</code>, <code>notEquals</code>, <code>exists</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="next-steps">Next Steps</h2>
-<ol>
-<li><strong>Helm Chart</strong> — package your Grid and ship it to any cluster.</li>
-<li><strong>GitOps</strong> — integrate with Argo CD or Flux for continuous delivery.</li>
-<li><strong>CI Integration</strong> — point your test runners to the Grid service endpoint.</li>
-<li><strong>Observability</strong> — import the provided Grafana dashboards and alerting rules.</li>
-</ol>
-<hr />
-<h2 id="community-support">Community &amp; Support</h2>
-<ul>
-<li><strong>Slack</strong>: Join the conversation and get help from maintainers.</li>
-<li><strong>GitHub Discussions</strong>: Ask questions, propose features, and share tips.</li>
-<li><strong>Contributing Guide</strong>: PRs welcome! See <code>CONTRIBUTING.md</code>.</li>
-</ul>
-<hr />
-<div align="center" style="font-size:0.9em;margin-top:2rem;">
-  Not affiliated with the official SeleniumHQ project.
-</div>
+<h2 id="full-yaml-example">✅ Full YAML Example</h2>
+<p>```yaml
+apiVersion: browserbee.io/v1
+kind: SeleniumWorkflow
+metadata:
+  name: login-flow
+spec:
+  description: "Test login and dashboard redirect"
+  webDriver:
+    browser: chrome
+    headless: true
+    implicitWait: 5
+    remoteURL: http://selenium-hub.selenium:4444/wd/hub
+    windowSize:
+      width: 1280
+      height: 800
+    capabilities:
+      timezone: "UTC"
+  actions:
+    - name: open-login
+      action: navigate
+      target: "https://example.com/login"</p>
+<pre><code>- name: input-username
+  action: input
+  selector:
+    strategy: id
+    value: username
+  value: "testuser"
+
+- name: input-password
+  action: input
+  selector:
+    strategy: id
+    value: password
+  value: "secure123"
+
+- name: click-submit
+  action: click
+  selector:
+    strategy: css
+    value: "#submit-login"
+
+- name: assert-dashboard
+  action: assert
+  selector:
+    strategy: css
+    value: "h1.dashboard"
+  expected: "Welcome"
+  condition: contains
+
+- name: take-screenshot
+  action: screenshot
+</code></pre>
 
 
 
@@ -893,10 +602,10 @@ kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostn
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

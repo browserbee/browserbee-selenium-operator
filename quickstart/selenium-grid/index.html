@@ -8,24 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://selenium-operator.browserbee.io/">
+        <link rel="canonical" href="https://selenium-operator.browserbee.io/quickstart/selenium-grid/">
       
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
-        <title>BrowserBee Selenium Operator</title>
+        <title>Selenium Grid with BrowserBee - BrowserBee Selenium Operator</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#selenium-grid-with-browserbee" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href="../.." title="BrowserBee Selenium Operator" class="md-header__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Selenium Grid with BrowserBee
             
           </span>
         </div>
@@ -222,7 +222,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
+    <a href="../.." title="BrowserBee Selenium Operator" class="md-nav__button md-logo" aria-label="BrowserBee Selenium Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -249,32 +249,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,182 +263,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-browserbee-selenium-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why BrowserBee Selenium Operator?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-local-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      1 — Create a local cluster
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-install-the-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 — Install the Operator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spin-up-a-selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 — Spin up a Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 — Verify
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manifests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manifests
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Manifests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-hub" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Hub
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Node
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-standalone-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Standalone Node
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Community &amp; Support
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -492,73 +294,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-browserbee-selenium-operator" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Why BrowserBee Selenium Operator?
+      Key Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#deploying-a-selenium-grid" class="md-nav__link">
     <span class="md-ellipsis">
-      Architecture
+      Deploying a Selenium Grid
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
+    <nav class="md-nav" aria-label="Deploying a Selenium Grid">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#1-apply-the-sample-grid" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      1. Apply the Sample Grid
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-create-a-local-cluster" class="md-nav__link">
+  <a href="#2-check-grid-status" class="md-nav__link">
     <span class="md-ellipsis">
-      1 — Create a local cluster
+      2. Check Grid Status
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-install-the-operator" class="md-nav__link">
+  <a href="#3-access-the-selenium-grid-console" class="md-nav__link">
     <span class="md-ellipsis">
-      2 — Install the Operator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spin-up-a-selenium-grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 — Spin up a Selenium Grid
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 — Verify
+      3. Access the Selenium Grid Console
     </span>
   </a>
   
@@ -570,46 +345,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manifests" class="md-nav__link">
+  <a href="#customize-your-grid" class="md-nav__link">
     <span class="md-ellipsis">
-      Manifests
+      Customize Your Grid
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Manifests">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring &amp; Scaling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring &amp; Scaling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#selenium-grid" class="md-nav__link">
+  <a href="#monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Selenium Grid
+      Monitoring
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selenium-hub" class="md-nav__link">
+  <a href="#scaling-the-grid" class="md-nav__link">
     <span class="md-ellipsis">
-      Selenium Hub
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Node
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selenium-standalone-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selenium Standalone Node
+      Scaling the Grid
     </span>
   </a>
   
@@ -621,27 +387,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      Best Practices
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#related-resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Community &amp; Support
+      🔗 Related Resources
     </span>
   </a>
   
@@ -666,164 +423,127 @@
   
 
 
-<h1 id="overview">Overview</h1>
-<p><a href="https://github.com/browserbee/browserbee-selenium-operator/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/browserbee/browserbee-selenium-operator?logo=github" /></a>
-<a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/browserbee/browserbee-selenium-operator" /></a>
-<a href="https://join.slack.com/t/browserbee/shared_invite/xyz"><img alt="Slack" src="https://img.shields.io/badge/chat-slack-purple?logo=slack" /></a></p>
-<p><strong>BrowserBee Selenium Operator</strong> is a Kubernetes‑native solution that lets you <strong>define, deploy, and scale Selenium Grid resources using Custom Resource Definitions (CRDs)</strong>. Manage your browser‑automation infrastructure the same way you manage the rest of your cloud‑native stack—declaratively, version‑controlled, and GitOps‑friendly.</p>
-<p>Whether you are experimenting locally or orchestrating hundreds of parallel test sessions in production, this documentation will guide you from first cluster to advanced tuning.</p>
-<hr />
-<h2 id="why-browserbee-selenium-operator">Why BrowserBee Selenium Operator?</h2>
-<table>
-<thead>
-<tr>
-<th>Challenge</th>
-<th>Traditional Approach</th>
-<th>Operator Advantage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Environment drift</strong></td>
-<td>Hand‑crafted YAML or imperative <code>kubectl</code> commands</td>
-<td>Declarative CRDs version‑controlled in Git</td>
-</tr>
-<tr>
-<td><strong>Upgrades &amp; scaling</strong></td>
-<td>Manual image bumps and replica tweaks</td>
-<td>Reconciliation loop keeps desired state</td>
-</tr>
-<tr>
-<td><strong>Developer onboarding</strong></td>
-<td>Tribal knowledge &amp; runbooks</td>
-<td>One‑liner <code>kubectl apply</code> installs Grid</td>
-</tr>
-<tr>
-<td><strong>Multi‑cluster adoption</strong></td>
-<td>Re‑implement configs per cluster</td>
-<td>Re‑use the same CRDs everywhere</td>
-</tr>
-</tbody>
-</table>
+<h1 id="selenium-grid-with-browserbee">Selenium Grid with BrowserBee</h1>
+<p>Selenium Grid is a core component of the <strong>BrowserBee Selenium Operator</strong>, enabling scalable, cross-browser test execution inside Kubernetes. It allows you to distribute Selenium tests across multiple containers (called nodes) managed by a central hub.</p>
 <blockquote>
-<p><strong>DX Tip️</strong><br />
-Store your CRDs in the same repo as your application code and let <strong>Argo CD</strong> or <strong>Flux</strong> apply them automatically. This turns Selenium Grid changes into pull‑request reviews, CI checks, and instant rollbacks.</p>
+<p>With BrowserBee, Selenium Grid becomes fully declarative, GitOps-friendly, and cloud-native.</p>
 </blockquote>
 <hr />
-<h2 id="architecture">Architecture</h2>
-<pre><code class="language-mermaid">flowchart TD
-    subgraph Kubernetes Cluster
-        direction LR
-        Operator[&quot;BrowserBee&lt;br&gt;Selenium Operator&quot;]
-        CRD[SeleniumGrid CRD]
-        Hub[Selenium Hub Deployment]
-        Nodes[Selenium Node StatefulSets]
-    end
-    Operator -- watches --&gt; CRD
-    Operator -- manages --&gt; Hub &amp; Nodes
-</code></pre>
+<h2 id="key-features">Key Features</h2>
 <ul>
-<li>The <strong>Operator</strong> reconciles every <code>SeleniumGrid</code> CR instance.</li>
-<li>A <strong>Hub</strong> deployment receives session requests.</li>
-<li>One or more <strong>Node</strong> StatefulSets register with the Hub to execute browser sessions.</li>
+<li><strong>Parallel Testing</strong>: Run many tests simultaneously across distributed browser nodes.</li>
+<li><strong>Cross-Browser Coverage</strong>: Support for Chrome, Firefox, and Edge (with more coming soon).</li>
+<li><strong>Dynamic Scaling</strong>: Add or remove nodes based on load using simple CR edits.</li>
+<li><strong>Centralized Hub</strong>: A controller (hub) routes all test requests to matching nodes.</li>
 </ul>
 <hr />
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li><strong>kubectl</strong> ≥ 1.25</li>
-<li><strong>kind</strong> ≥ 0.20 (or any Kubernetes 1.25+ cluster)</li>
-</ul>
-<h3 id="1-create-a-local-cluster">1 — Create a local cluster</h3>
-<pre><code class="language-bash">kind create cluster --name selenium-cluster
+<h2 id="deploying-a-selenium-grid">Deploying a Selenium Grid</h2>
+<h3 id="1-apply-the-sample-grid">1. Apply the Sample Grid</h3>
+<p>Create a simple Grid with 1 hub and 2 Chrome nodes:</p>
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/config/samples/selenium-grid_v1_seleniumgrid.yaml
 </code></pre>
-<h3 id="2-install-the-operator">2 — Install the Operator</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/install.yaml
-</code></pre>
-<p>This installs all components in the <code>browserbee-selenium-operator-system</code> namespace.</p>
 <blockquote>
-<p><strong>Tip️</strong><br />
-Watch the rollout live:<br />
-<code>kubectl -n browserbee-selenium-operator-system get pods -w</code></p>
+<p>This YAML is a <code>SeleniumGrid</code> CRD managed by the operator.</p>
 </blockquote>
-<h3 id="3-spin-up-a-selenium-grid">3 — Spin up a Selenium Grid</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/main/manifests/selenium-grid/install.yaml
-</code></pre>
-<h3 id="4-verify">4 — Verify</h3>
+<hr />
+<h3 id="2-check-grid-status">2. Check Grid Status</h3>
+<p>Verify the grid has been created successfully:</p>
 <pre><code class="language-bash">kubectl get seleniumgrids
-kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 </code></pre>
-<p>Open the Grid console in your browser and start testing!</p>
+<p>You should see a CR with status fields indicating readiness (depending on operator version).</p>
 <hr />
-<h2 id="manifests">Manifests</h2>
-<p>Use the ready‑made samples to get productive in seconds:</p>
+<h3 id="3-access-the-selenium-grid-console">3. Access the Selenium Grid Console</h3>
+<p>To use the Selenium Hub:</p>
+<pre><code class="language-bash">kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+</code></pre>
+<p>Open the resulting URL in your browser to access the Selenium Console UI.</p>
+<blockquote>
+<p>💡 Tip: If you're using a local cluster like Kind or Minikube, you may need to expose the hub using a <code>NodePort</code> or <code>Ingress</code>.</p>
+</blockquote>
+<hr />
+<h2 id="customize-your-grid">Customize Your Grid</h2>
+<p>You can fully configure the grid by modifying the CR’s <code>spec</code> section. Below is a multi-browser setup example:</p>
+<pre><code class="language-yaml">apiVersion: selenium-grid.browserbee.io/v1
+kind: SeleniumGrid
+metadata:
+  name: cross-browser-grid
+spec:
+  hub:
+    replicas: 1
+  nodes:
+    - browser: chrome
+      replicas: 3
+    - browser: firefox
+      replicas: 2
+    - browser: edge
+      replicas: 1
+</code></pre>
+<p>Apply your changes:</p>
+<pre><code class="language-bash">kubectl apply -f custom-grid.yaml
+</code></pre>
+<blockquote>
+<p>Each node runs the appropriate WebDriver image with the right browser preinstalled.</p>
+</blockquote>
+<hr />
+<h2 id="monitoring-scaling">Monitoring &amp; Scaling</h2>
+<h3 id="monitoring">Monitoring</h3>
+<p>Integrate with Prometheus + Grafana for real-time visibility into:</p>
+<ul>
+<li>Pod health</li>
+<li>Browser session usage</li>
+<li>Response latency</li>
+</ul>
+<p>BrowserBee emits standard Kubernetes metrics for all Grid components.</p>
+<h3 id="scaling-the-grid">Scaling the Grid</h3>
+<p>Adjust node or hub replicas by editing the <code>SeleniumGrid</code> spec:</p>
+<pre><code class="language-yaml">spec:
+  nodes:
+    - browser: chrome
+      replicas: 10
+</code></pre>
+<p>Apply and the operator will handle the scaling automatically.</p>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
 <table>
 <thead>
 <tr>
-<th>Example</th>
+<th>Tip</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml"><code>selenium-grid.yaml</code></a></td>
-<td>Full Selenium Grid with hub, Chrome &amp; Firefox nodes</td>
+<td><strong>Use a dedicated namespace</strong></td>
+<td>Keep Grid resources isolated (e.g., <code>browserbee-testing</code>)</td>
 </tr>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml"><code>selenium-hub.yaml</code></a></td>
-<td>Kubernetes deployment that runs a Selenium hub</td>
+<td><strong>Update browser images regularly</strong></td>
+<td>Stay current with browser features and security patches</td>
 </tr>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml"><code>selenium-node.yaml</code></a></td>
-<td>Kubernetes deployment that runs a Selenium node</td>
+<td><strong>Monitor usage trends</strong></td>
+<td>Use Grafana dashboards to right-size node counts</td>
 </tr>
 <tr>
-<td><a href="https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml"><code>selenium-standalone.yaml</code></a></td>
-<td>Kubernetes deployment that runs a Selenium standalone node</td>
+<td><strong>Pin compatible image versions</strong></td>
+<td>Ensure version consistency across test runs</td>
+</tr>
+<tr>
+<td><strong>Use selectors or labels</strong></td>
+<td>Group grids by environment, test suite, or CI branch</td>
 </tr>
 </tbody>
 </table>
-<h3 id="selenium-grid">Selenium Grid</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-grid_v1_seleniumgrid.yaml
-</code></pre>
-<h3 id="selenium-hub">Selenium Hub</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-hub_v1_seleniumhub.yaml
-</code></pre>
-<h3 id="selenium-node">Selenium Node</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-node_v1_seleniumnode.yaml
-</code></pre>
-<h3 id="selenium-standalone-node">Selenium Standalone Node</h3>
-<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-selenium-operator/refs/heads/main/config/samples/selenium-standalone_v1_seleniumstandalone.yaml
-</code></pre>
 <hr />
-<h2 id="features">Features</h2>
+<h2 id="related-resources">🔗 Related Resources</h2>
 <ul>
-<li><strong>Declarative CRDs</strong> — define Hub, Nodes, browser versions, and autoscaling rules in YAML.</li>
-<li><strong>Zero‑downtime upgrades</strong> — rolling updates handled by the Operator.</li>
-<li><strong>Autoscaling</strong> — integrate with the Kubernetes Horizontal Pod Autoscaler.</li>
-<li><strong>Multi‑version support</strong> — run multiple browser versions side‑by‑side.</li>
-<li><strong>Metrics &amp; observability</strong> - scrape Prometheus metrics out‑of‑the‑box; dashboards included.</li>
-<li><strong>Extensible</strong> — add custom node images, sidecars, or plugins via standard Kubernetes patterns.</li>
+<li><a href="../installation/">Installing the Operator</a></li>
+<li><a href="../selenium-workflow/">Declarative Test Workflows</a></li>
 </ul>
 <hr />
-<h2 id="next-steps">Next Steps</h2>
-<ol>
-<li><strong>Helm Chart</strong> — package your Grid and ship it to any cluster.</li>
-<li><strong>GitOps</strong> — integrate with Argo CD or Flux for continuous delivery.</li>
-<li><strong>CI Integration</strong> — point your test runners to the Grid service endpoint.</li>
-<li><strong>Observability</strong> — import the provided Grafana dashboards and alerting rules.</li>
-</ol>
-<hr />
-<h2 id="community-support">Community &amp; Support</h2>
-<ul>
-<li><strong>Slack</strong>: Join the conversation and get help from maintainers.</li>
-<li><strong>GitHub Discussions</strong>: Ask questions, propose features, and share tips.</li>
-<li><strong>Contributing Guide</strong>: PRs welcome! See <code>CONTRIBUTING.md</code>.</li>
-</ul>
-<hr />
-<div align="center" style="font-size:0.9em;margin-top:2rem;">
-  Not affiliated with the official SeleniumHQ project.
-</div>
+<blockquote>
+<p>With BrowserBee, launching a multi-browser Selenium Grid is as simple as editing a YAML file.</p>
+</blockquote>
 
 
 
@@ -893,10 +613,10 @@ kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostn
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
