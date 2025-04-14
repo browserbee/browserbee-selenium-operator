@@ -56,8 +56,10 @@ spec:
                 format: int32
                 type: integer
               resources:
+                description: ResourceSpec defines the resource specifications.
                 properties:
                   limits:
+                    description: ResourceRequirements defines the resource requirements.
                     properties:
                       cpu:
                         type: string
@@ -65,6 +67,7 @@ spec:
                         type: string
                     type: object
                   requests:
+                    description: ResourceRequirements defines the resource requirements.
                     properties:
                       cpu:
                         type: string

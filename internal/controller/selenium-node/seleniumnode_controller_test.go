@@ -27,12 +27,13 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
+	seleniumhubv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	seleniumnodev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-node/v1"
 )
 
 var _ = Describe("SeleniumNode Controller", func() {
 	Context("When reconciling a resource", func() {
-		const resourceName = "test-resource"
+		const resourceName = "testresource"
 
 		ctx := context.Background()
 
@@ -51,7 +52,12 @@ var _ = Describe("SeleniumNode Controller", func() {
 						Name:      resourceName,
 						Namespace: "default",
 					},
-					// TODO(user): Specify other spec details if needed.
+					Spec: seleniumnodev1.SeleniumNodeSpec{
+						HubRef: seleniumhubv1.SeleniumHubRef{
+							Name:      "valid-hub-name",
+							Namespace: "valid-hub-namespace",
+						},
+					},
 				}
 				Expect(k8sClient.Create(ctx, resource)).To(Succeed())
 			}

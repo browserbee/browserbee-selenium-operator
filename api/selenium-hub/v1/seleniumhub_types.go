@@ -29,13 +29,19 @@ import (
 type LogLevel string
 
 const (
+	// LogLevelDebug represents the debug log level.
 	LogLevelDebug LogLevel = "DEBUG"
-	LogLevelInfo  LogLevel = "INFO"
-	LogLevelWarn  LogLevel = "WARN"
+	// LogLevelInfo represents the info log level.
+	LogLevelInfo LogLevel = "INFO"
+	// LogLevelWarn represents the warning log level.
+	LogLevelWarn LogLevel = "WARN"
+	// LogLevelError represents the error log level.
 	LogLevelError LogLevel = "ERROR"
+	// LogLevelFatal represents the fatal log level.
 	LogLevelFatal LogLevel = "FATAL"
 )
 
+// SeleniumHubRef represents a reference to a Selenium Hub.
 type SeleniumHubRef struct {
 	// Name is the name of the Selenium Hub.
 	// +kubebuilder:validation:Required

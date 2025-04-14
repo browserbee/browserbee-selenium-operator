@@ -37,11 +37,13 @@ type SeleniumStandaloneSpec struct {
 	Resources        ResourceSpec      `json:"resources,omitempty"`   // CPU/Memory limits
 }
 
+// ResourceSpec defines the resource specifications.
 type ResourceSpec struct {
 	Requests ResourceRequirements `json:"requests,omitempty"`
 	Limits   ResourceRequirements `json:"limits,omitempty"`
 }
 
+// ResourceRequirements defines the resource requirements.
 type ResourceRequirements struct {
 	CPU    string `json:"cpu,omitempty"`    // e.g. "500m"
 	Memory string `json:"memory,omitempty"` // e.g. "512Mi"
