@@ -33,6 +33,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	seleniumgridv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-grid/v1"
+	v1seleniumhub "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -73,6 +74,9 @@ var _ = BeforeSuite(func() {
 	Expect(cfg).NotTo(BeNil())
 
 	err = seleniumgridv1.AddToScheme(scheme.Scheme)
+	Expect(err).NotTo(HaveOccurred())
+
+	err = v1seleniumhub.AddToScheme(scheme.Scheme)
 	Expect(err).NotTo(HaveOccurred())
 
 	//+kubebuilder:scaffold:scheme
