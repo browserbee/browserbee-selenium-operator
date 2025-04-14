@@ -115,7 +115,7 @@ kubectl get pods -l app=selenium-grid
 Now that your operator is up and running, try one of the quickstart workflows:
 
 - [Create Your First Selenium Grid](../quickstart/selenium-grid.md)
-- [Define and Run Declarative Selenium Tests](../quickstart/test-cr.md)
+- [Define and Run Declarative Selenium Tests](../quickstart/selenium-workflow.md)
 
 ---
 
