@@ -164,8 +164,7 @@ You can use any of the following components in your workflow:
 
 - [Declarative Testing](../concepts/declarative-testing.md)
 - [Installation Guide](../quickstart/installation.md)
-- [SeleniumGrid CRD Reference](../reference/seleniumgrid.md)
-- [Create and Run a Test](../quickstart/test-cr.md)
+- [Create and Run a Test](../quickstart/selenium-workflow.md)
 
 ---
 

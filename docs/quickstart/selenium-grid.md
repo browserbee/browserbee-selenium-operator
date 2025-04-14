@@ -127,9 +127,8 @@ Apply and the operator will handle the scaling automatically.
 
 ## 🔗 Related Resources
 
-- [SeleniumGrid CRD Reference](../reference/seleniumgrid.md)
 - [Installing the Operator](../quickstart/installation.md)
-- [Declarative Test Workflows](../quickstart/test-cr.md)
+- [Declarative Test Workflows](../quickstart/selenium-workflow.md)
 
 ---
 

@@ -132,8 +132,7 @@ The operator will automatically handle scaling the underlying Deployment.
 
 - 🧩 [Selenium Grid Overview](../quickstart/selenium-grid.md)
 - ⚙️ [Installation Guide](../quickstart/installation.md)
-- 📄 [Standalone CRD Reference](../reference/seleniumstandalone.md)
-- 🧪 [Writing Selenium Tests](../quickstart/test-cr.md)
+- 🧪 [Writing Selenium Tests](../quickstart/selenium-workflow.md)
 
 ---
 
