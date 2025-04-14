@@ -59,4 +59,5 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          make docker-build docker-push IMG=${{ secrets.DOCKER_IMAGE }}
+          make docker-build docker-push IMG=ghcr.io/browserbee/browserbee-selenium-operator/controller:latest
+
