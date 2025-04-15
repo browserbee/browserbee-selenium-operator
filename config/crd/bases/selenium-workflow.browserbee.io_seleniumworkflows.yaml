@@ -1,0 +1,162 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: seleniumworkflows.selenium-workflow.browserbee.io
+spec:
+  group: selenium-workflow.browserbee.io
+  names:
+    kind: SeleniumWorkflow
+    listKind: SeleniumWorkflowList
+    plural: seleniumworkflows
+    singular: seleniumworkflow
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: SeleniumWorkflow is the Schema for the seleniumworkflows API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: SeleniumWorkflowSpec defines the desired state of SeleniumWorkflow
+            properties:
+              actions:
+                items:
+                  description: Action represents a single step in the workflow
+                  properties:
+                    action:
+                      type: string
+                    condition:
+                      type: string
+                    expected:
+                      type: string
+                    fallback:
+                      description: Fallback defines alternative selectors for finding
+                        elements
+                      properties:
+                        selectors:
+                          items:
+                            description: Selector specifies a strategy and value for
+                              locating elements
+                            properties:
+                              strategy:
+                                type: string
+                              value:
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    name:
+                      type: string
+                    retry:
+                      description: Retry defines the retry strategy for actions
+                      properties:
+                        delay:
+                          format: int32
+                          type: integer
+                        maxRetries:
+                          format: int32
+                          type: integer
+                      type: object
+                    selector:
+                      description: Selector specifies a strategy and value for locating
+                        elements
+                      properties:
+                        strategy:
+                          type: string
+                        value:
+                          type: string
+                      type: object
+                    target:
+                      type: string
+                    value:
+                      type: string
+                  type: object
+                type: array
+              description:
+                type: string
+              gridRef:
+                type: string
+              name:
+                type: string
+              webDriver:
+                description: WebDriver contains configuration for the Selenium WebDriver
+                properties:
+                  browser:
+                    type: string
+                  capabilities:
+                    additionalProperties:
+                      type: string
+                    type: object
+                  headless:
+                    type: boolean
+                  implicitWait:
+                    format: int32
+                    type: integer
+                  remoteUrl:
+                    type: string
+                  windowSize:
+                    description: WindowSize specifies the dimensions of the browser
+                      window
+                    properties:
+                      height:
+                        format: int32
+                        type: integer
+                      width:
+                        format: int32
+                        type: integer
+                    type: object
+                type: object
+            type: object
+          status:
+            description: SeleniumWorkflowStatus defines the observed state of SeleniumWorkflow
+            properties:
+              currentStatus:
+                type: string
+              executionCount:
+                format: int32
+                type: integer
+              failureCount:
+                format: int32
+                type: integer
+              lastFailedTime:
+                format: date-time
+                type: string
+              lastScheduleTime:
+                format: date-time
+                type: string
+              lastSuccessfulTime:
+                format: date-time
+                type: string
+              logUrl:
+                type: string
+              message:
+                type: string
+              successCount:
+                format: int32
+                type: integer
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
