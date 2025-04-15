@@ -6,7 +6,7 @@ Declarative testing with the **BrowserBee Selenium Operator** lets you define br
 
 ## What Is Declarative Selenium Workflow?
 
-Declarative workflows is the practice of defining **what** to test (e.g., click this, assert that) in a structured way, instead of writing imperative test code in Python or Java. You express the desired workflow in a `SeleniumWorkflow` YAML Custom Resource, and the operator handles browser automation behind the scenes.
+Declarative workflows are the practice of defining **what** to test (e.g., click this, assert that) in a structured way, instead of writing imperative test code in Python or Java. You express the desired workflow in a `SeleniumWorkflow` YAML Custom Resource, and the operator handles browser automation behind the scenes.
 
 ---
 

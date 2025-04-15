@@ -132,7 +132,7 @@ func (r *SeleniumWorkflowReconciler) Reconcile(ctx context.Context, req ctrl.Req
 	existingCronJob := &batchv1.CronJob{}
 	err = r.Get(ctx, client.ObjectKey{Name: cronJob.Name, Namespace: cronJob.Namespace}, existingCronJob)
 	if err != nil && errors.IsNotFound(err) {
-		// Create the CronJob
+		// Create the CronJob if it doesn't exist
 		if err := r.Create(ctx, cronJob); err != nil {
 			log.Error(err, "Failed to create CronJob")
 			return ctrl.Result{}, err
@@ -141,6 +141,14 @@ func (r *SeleniumWorkflowReconciler) Reconcile(ctx context.Context, req ctrl.Req
 	} else if err != nil {
 		log.Error(err, "Failed to get CronJob")
 		return ctrl.Result{}, err
+	} else {
+		// Update the CronJob if it already exists
+		existingCronJob.Spec = cronJob.Spec
+		if err := r.Update(ctx, existingCronJob); err != nil {
+			log.Error(err, "Failed to update existing CronJob")
+			return ctrl.Result{}, err
+		}
+		log.Info("CronJob updated successfully")
 	}
 
 	// Update the SeleniumWorkflow status
