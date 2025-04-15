@@ -162,7 +162,6 @@ You can use any of the following components in your workflow:
 
 ## Related Resources
 
-- [Declarative Testing](../concepts/declarative-testing.md)
 - [Installation Guide](../quickstart/installation.md)
 - [Create and Run a Test](../quickstart/selenium-workflow.md)
 
