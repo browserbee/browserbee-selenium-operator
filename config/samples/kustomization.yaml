@@ -4,4 +4,5 @@ resources:
 - selenium-hub_v1_seleniumhub.yaml
 - selenium-node_v1_seleniumnode.yaml
 - selenium-standalone_v1_seleniumstandalone.yaml
+- selenium-workflow_v1_seleniumworkflow.yaml
 #+kubebuilder:scaffold:manifestskustomizesamples

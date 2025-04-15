@@ -39,10 +39,12 @@ import (
 	seleniumhubv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-hub/v1"
 	seleniumnodev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-node/v1"
 	seleniumstandalonev1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-standalone/v1"
+	seleniumworkflowv1 "github.com/browserbee/browserbee-selenium-operator/api/selenium-workflow/v1"
 	seleniumgridcontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-grid"
 	seleniumhubcontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-hub"
 	seleniumnodecontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-node"
 	seleniumstandalonecontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-standalone"
+	seleniumworkflowcontroller "github.com/browserbee/browserbee-selenium-operator/internal/controller/selenium-workflow"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -58,6 +60,7 @@ func init() {
 	utilruntime.Must(seleniumhubv1.AddToScheme(scheme))
 	utilruntime.Must(seleniumnodev1.AddToScheme(scheme))
 	utilruntime.Must(seleniumstandalonev1.AddToScheme(scheme))
+	utilruntime.Must(seleniumworkflowv1.AddToScheme(scheme))
 	//+kubebuilder:scaffold:scheme
 }
 
@@ -158,6 +161,13 @@ func main() {
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "SeleniumStandalone")
+		os.Exit(1)
+	}
+	if err = (&seleniumworkflowcontroller.SeleniumWorkflowReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "SeleniumWorkflow")
 		os.Exit(1)
 	}
 	//+kubebuilder:scaffold:builder

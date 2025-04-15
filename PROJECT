@@ -45,4 +45,13 @@ resources:
   kind: SeleniumStandalone
   path: github.com/browserbee/browserbee-selenium-operator/api/selenium-standalone/v1
   version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: browserbee.io
+  group: selenium-workflow
+  kind: SeleniumWorkflow
+  path: github.com/browserbee/browserbee-selenium-operator/api/selenium-workflow/v1
+  version: v1
 version: "3"

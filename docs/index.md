@@ -74,7 +74,7 @@ kubectl apply -f https://raw.githubusercontent.com/browserbee/browserbee-seleniu
 ### 4 — Verify
 ```bash
 kubectl get seleniumgrids
-kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+kubectl port-forward svc/seleniumgrid-sample-hub 4444:4444
 ```
 Open the Grid console in your browser and start testing!
 

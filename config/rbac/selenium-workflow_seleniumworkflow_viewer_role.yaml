@@ -1,0 +1,27 @@
+# permissions for end users to view seleniumworkflows.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: seleniumworkflow-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: browserbee-selenium-operator
+    app.kubernetes.io/part-of: browserbee-selenium-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: seleniumworkflow-viewer-role
+rules:
+- apiGroups:
+  - selenium-workflow.browserbee.io
+  resources:
+  - seleniumworkflows
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - selenium-workflow.browserbee.io
+  resources:
+  - seleniumworkflows/status
+  verbs:
+  - get
