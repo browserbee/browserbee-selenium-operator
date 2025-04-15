@@ -2,34 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://selenium-operator.browserbee.io/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
-         <loc>https://selenium-operator.browserbee.io/concepts/declarative-testing/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <loc>https://selenium-operator.browserbee.io/concepts/declarative-workflows/</loc>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
          <loc>https://selenium-operator.browserbee.io/quickstart/installation/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
          <loc>https://selenium-operator.browserbee.io/quickstart/selenium-grid/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
          <loc>https://selenium-operator.browserbee.io/quickstart/selenium-hub/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
          <loc>https://selenium-operator.browserbee.io/quickstart/selenium-node/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
          <loc>https://selenium-operator.browserbee.io/quickstart/selenium-standalone/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
     <url>
          <loc>https://selenium-operator.browserbee.io/quickstart/selenium-workflow/</loc>
-         <lastmod>2025-04-14</lastmod>
+         <lastmod>2025-04-15</lastmod>
     </url>
 </urlset>

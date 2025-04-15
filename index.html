@@ -751,7 +751,7 @@ Watch the rollout live:<br />
 </code></pre>
 <h3 id="4-verify">4 — Verify</h3>
 <pre><code class="language-bash">kubectl get seleniumgrids
-kubectl get svc selenium-hub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+kubectl port-forward svc/seleniumgrid-sample-hub 4444:4444
 </code></pre>
 <p>Open the Grid console in your browser and start testing!</p>
 <hr />
